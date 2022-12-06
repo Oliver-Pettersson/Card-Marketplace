@@ -1,5 +1,5 @@
 import { REFRESH_TOKEN } from '../config/constants/Cookies';
-import UserEntity from '../types/User/UserEntity';
+import Principal from '../models/Principal/Principal';
 import CookieUtility from '../utils/CookieUtility';
 import ApiService from './ApiService'
 
@@ -19,7 +19,7 @@ const AuthenticationService = () => ({
       })
       return data;
     },
-  signup:async (user:UserEntity) => {
+  signup:async (user:Principal) => {
     return ApiService.post(baseURL + "signup", {...user})
   }
 })

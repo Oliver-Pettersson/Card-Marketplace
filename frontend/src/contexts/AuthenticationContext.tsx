@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../config/constants/Cookies";
-import Principal from "../types/Principal/Principal";
+import Principal from "../models/Principal/Principal";
 import AuthenticationService from "../services/AuthenticationService";
 import CookieUtility from "../utils/CookieUtility";
 import JWTUtility from "../utils/JWTUtility";
