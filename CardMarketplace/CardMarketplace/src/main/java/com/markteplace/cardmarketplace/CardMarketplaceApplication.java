@@ -1,4 +1,4 @@
-package com.markteplace.CardMarketplace;
+package com.markteplace.cardmarketplace;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

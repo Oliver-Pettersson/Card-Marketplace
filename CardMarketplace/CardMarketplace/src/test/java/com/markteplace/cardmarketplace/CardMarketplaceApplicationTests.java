@@ -1,4 +1,4 @@
-package com.markteplace.CardMarketplace;
+package com.markteplace.cardmarketplace;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
