@@ -1,6 +1,6 @@
-package com.accenture.recipemanager.core.security;
+package com.markteplace.core.security;
 
-import com.accenture.recipemanager.core.security.user.UserService;
+import com.markteplace.domain.user.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

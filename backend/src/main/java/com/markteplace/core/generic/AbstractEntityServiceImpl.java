@@ -1,7 +1,7 @@
-package com.accenture.recipemanager.core.generic;
+package com.markteplace.core.generic;
 
-import com.accenture.recipemanager.core.error.NotFoundException;
-import com.accenture.recipemanager.core.error.UsernameAlreadyExistsException;
+import com.markteplace.core.error.NotFoundException;
+import com.markteplace.core.error.UsernameAlreadyExistsException;
 import org.slf4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;

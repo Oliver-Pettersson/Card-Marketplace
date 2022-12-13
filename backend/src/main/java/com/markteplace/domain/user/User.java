@@ -1,9 +1,10 @@
-package com.accenture.recipemanager.core.security.user;
+package com.markteplace.domain.user;
 
-import com.accenture.recipemanager.core.generic.AbstractEntity;
+import com.markteplace.core.generic.AbstractEntity;
+import com.markteplace.domain.deck.Deck;
 
 import javax.persistence.*;
-import java.util.UUID;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -14,25 +15,20 @@ public class User extends AbstractEntity {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public User(String username, String password) {
+    @Column(name = "coins")
+    private int coins;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<Deck> decks;
+
+    public User(String username, String password, int coins) {
         this.username = username;
         this.password = password;
+        this.coins = coins;
     }
 
     public User() {
-    }
-
-    @Override
-    public User setId(UUID id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                '}';
     }
 
     public String getUsername() {
@@ -49,7 +45,14 @@ public class User extends AbstractEntity {
     }
 
     public User setPassword(String password) {
-        this.password = password;
-        return this;
+        this.password = password; return this;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public User setCoins(int heightInCM) {
+        this.coins = heightInCM; return this;
     }
 }

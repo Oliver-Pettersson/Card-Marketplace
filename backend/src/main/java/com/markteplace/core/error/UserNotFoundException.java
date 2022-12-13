@@ -1,4 +1,4 @@
-package com.accenture.recipemanager.core.error;
+package com.markteplace.core.error;
 
 import org.springframework.security.core.AuthenticationException;
 

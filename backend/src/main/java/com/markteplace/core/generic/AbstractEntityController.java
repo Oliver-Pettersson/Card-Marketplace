@@ -1,6 +1,6 @@
-package com.accenture.recipemanager.core.generic;
+package com.markteplace.core.generic;
 
-import com.accenture.recipemanager.core.error.UsernameAlreadyExistsException;
+import com.markteplace.core.error.UsernameAlreadyExistsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

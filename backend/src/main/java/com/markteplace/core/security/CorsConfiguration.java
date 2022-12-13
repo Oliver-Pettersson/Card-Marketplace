@@ -1,4 +1,4 @@
-package com.accenture.recipemanager.core.security;
+package com.markteplace.core.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

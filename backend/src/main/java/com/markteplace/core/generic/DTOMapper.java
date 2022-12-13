@@ -1,4 +1,4 @@
-package com.accenture.recipemanager.core.generic;
+package com.markteplace.core.generic;
 
 import java.util.Collection;
 
