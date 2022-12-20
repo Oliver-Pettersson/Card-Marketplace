@@ -6,6 +6,7 @@ import HomePage from "./components/pages/HomePage/HomePage";
 import SignUpPage from "./components/pages/SignUpPage/SignUpPage";
 import { AuthenticationContextProvider } from "./contexts/AuthenticationContext";
 import { SnackbarContextProvider } from "./contexts/SnackbarContext";
+import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<ProtectedRoute />}>
+              <Route path="/" element={<HomePage />} />
+            </Route>
           </Routes>
         </SnackbarContextProvider>
       </AuthenticationContextProvider>
