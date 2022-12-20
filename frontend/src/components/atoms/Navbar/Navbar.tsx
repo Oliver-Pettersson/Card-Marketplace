@@ -1,14 +1,12 @@
+import { LogoutOutlined } from "@mui/icons-material";
 import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Toolbar,
-  Typography,
+    AppBar,
+    Box,
+    Button,
+    Container, Toolbar,
+    Typography
 } from "@mui/material";
 import React from "react";
-import { LoginOutlined, LogoutOutlined } from "@mui/icons-material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthenticationContext";
 
@@ -18,18 +16,6 @@ export default function Navbar() {
   const navigate = useNavigate();
   const path = useLocation().pathname;
   const isAuth = path === "/login" || path === "/signup";
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = (destination: string) => {
-    setAnchorElNav(null);
-    navigate(destination);
-  };
 
   return isAuth || isProcessingAuthentication ? (
     <></>
@@ -65,7 +51,7 @@ export default function Navbar() {
             {pages.map((page) => (
               <Button
                 key={page.name}
-                onClick={() => handleCloseNavMenu(page.path)}
+                onClick={() => navigate(page.path)}
                 sx={{
                   my: 2,
                   color: "black",
