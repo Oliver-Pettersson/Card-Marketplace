@@ -8,6 +8,7 @@ import { AuthenticationContextProvider } from "./contexts/AuthenticationContext"
 import { SnackbarContextProvider } from "./contexts/SnackbarContext";
 import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
 import Navbar from "./components/atoms/Navbar/Navbar";
+import DeckPage from "./components/pages/DeckPage/DeckPage";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/" element={<ProtectedRoute />}>
               <Route path="/" element={<HomePage />} />
+            </Route>
+            <Route path="/decks" element={<ProtectedRoute />}>
+              <Route path="/decks" element={<DeckPage />} />
             </Route>
           </Routes>
         </SnackbarContextProvider>
