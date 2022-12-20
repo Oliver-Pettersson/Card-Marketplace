@@ -7,12 +7,14 @@ import SignUpPage from "./components/pages/SignUpPage/SignUpPage";
 import { AuthenticationContextProvider } from "./contexts/AuthenticationContext";
 import { SnackbarContextProvider } from "./contexts/SnackbarContext";
 import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
+import Navbar from "./components/atoms/Navbar/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthenticationContextProvider>
         <SnackbarContextProvider>
+          <Navbar />
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
