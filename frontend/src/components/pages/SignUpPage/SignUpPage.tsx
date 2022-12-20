@@ -1,12 +1,17 @@
 import { Form, Formik } from "formik";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Paper, Button, Typography } from "@mui/material";
 import * as Yup from "yup";
 import AuthenticationService from "../../../services/AuthenticationService";
 import MuiTextField from "../../atoms/MuiTextField/MuiTextField";
+import { useAuth } from "../../../contexts/AuthenticationContext";
+import { useSnackbar } from "../../../contexts/SnackbarContext";
 
-export default function RegisterPage() {
+export default function SignUpPage() {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const { displaySnackbarMessage } = useSnackbar();
   const validationSchema = Yup.object().shape({
     username: Yup.string()
       .required("This field can't be empty")
@@ -33,9 +38,14 @@ export default function RegisterPage() {
             initialValues={{ username: "", password: "", repeatPassword: "" }}
             onSubmit={(value) => {
               console.log(value);
+              AuthenticationService().signup(value).then(() => login(value.username, value.password)
+              .then(() => navigate("/"))
+              ).catch((response) =>
+              displaySnackbarMessage(response.data, "error")
+            );
             }}
           >
-            {({ handleChange, submitForm, errors }) => (
+            {({ handleChange, errors }) => (
               <Form>
                 <div
                   style={{

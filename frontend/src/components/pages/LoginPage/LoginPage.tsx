@@ -63,7 +63,7 @@ export default function LoginPage() {
                   <Link
                     color="#63A4FF"
                     style={{ color: "#63A4FF" }}
-                    to={"/register"}
+                    to={"/signup"}
                   >
                     <Typography variant="subtitle2">
                       Don't have an account yet? Sign up
