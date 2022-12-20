@@ -1,6 +1,6 @@
-package com.accenture.recipemanager.core.bean;
+package com.markteplace.core.bean;
 
-import com.accenture.recipemanager.RecipemanagerApplication;
+import com.markteplace.CardMarketplaceApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InjectionPoint;
@@ -22,7 +22,7 @@ public class LoggerConfiguration {
 
     @Bean
     public Logger logger() {
-        return LoggerFactory.getLogger(RecipemanagerApplication.class);
+        return LoggerFactory.getLogger(CardMarketplaceApplication.class);
     }
 
 }

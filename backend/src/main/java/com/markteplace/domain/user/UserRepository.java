@@ -1,6 +1,6 @@
-package com.accenture.recipemanager.core.security.user;
+package com.markteplace.domain.user;
 
-import com.accenture.recipemanager.core.generic.AbstractEntityRepository;
+import com.markteplace.core.generic.AbstractEntityRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

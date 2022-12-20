@@ -1,4 +1,4 @@
-package com.accenture.recipemanager.core.security.user.dto;
+package com.markteplace.domain.user.dto;
 
 public class UserSignUpDTO {
     private String username;
@@ -24,4 +24,5 @@ public class UserSignUpDTO {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }

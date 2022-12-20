@@ -1,10 +1,10 @@
-package com.accenture.recipemanager.core.security.user;
+package com.markteplace.domain.user;
 
-import com.accenture.recipemanager.core.error.UsernameAlreadyExistsException;
-import com.accenture.recipemanager.core.generic.AbstractEntityController;
-import com.accenture.recipemanager.core.generic.AbstractEntityService;
-import com.accenture.recipemanager.core.generic.DTOMapper;
-import com.accenture.recipemanager.core.security.user.dto.UserDTO;
+import com.markteplace.core.error.UsernameAlreadyExistsException;
+import com.markteplace.core.generic.AbstractEntityController;
+import com.markteplace.core.generic.AbstractEntityService;
+import com.markteplace.core.generic.DTOMapper;
+import com.markteplace.domain.user.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -55,7 +55,7 @@ public class UserController extends AbstractEntityController<User, UserDTO> {
      */
     @PutMapping("/")
     @Override
-    public ResponseEntity<UserDTO> updateById(String ignore, @RequestBody UserDTO dto) throws UsernameAlreadyExistsException {
+    public ResponseEntity<UserDTO> updateById(String ignore, @RequestBody UserDTO dto)  throws UsernameAlreadyExistsException {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return super.updateById(user.getId().toString(), dto);
     }

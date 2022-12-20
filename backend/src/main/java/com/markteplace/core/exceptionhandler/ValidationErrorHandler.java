@@ -1,7 +1,7 @@
-package com.accenture.recipemanager.core.exceptionhandler;
+package com.markteplace.core.exceptionhandler;
 
-import com.accenture.recipemanager.core.error.*;
-import com.accenture.recipemanager.domain.recipe.Recipe;
+
+import com.markteplace.core.error.*;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
