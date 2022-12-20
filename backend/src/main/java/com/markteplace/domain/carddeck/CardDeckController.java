@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/card-market-offer")
+@RequestMapping("/card-deck")
 public class CardDeckController extends AbstractEntityController<CardDeck, CardDeckDTO> {
     public CardDeckController(AbstractEntityService<CardDeck> service, DTOMapper<CardDeck, CardDeckDTO> mapper) {
         super(service, mapper);
