@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, CardType } from "../atoms/Card";
+import { Card, CardType } from "../../atoms/Card";
 
 export function Store_Packs() {
   const [cards, setCards] = useState([]);
