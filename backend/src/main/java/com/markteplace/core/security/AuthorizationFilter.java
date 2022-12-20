@@ -1,10 +1,10 @@
-package com.accenture.recipemanager.core.security;
+package com.markteplace.core.security;
 
 
-import com.accenture.recipemanager.core.security.user.User;
-import com.accenture.recipemanager.core.security.user.UserService;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.markteplace.domain.user.User;
+import com.markteplace.domain.user.UserService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;

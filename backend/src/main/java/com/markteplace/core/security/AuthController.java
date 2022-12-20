@@ -1,8 +1,8 @@
-package com.accenture.recipemanager.core.security;
+package com.markteplace.core.security;
 
-import com.accenture.recipemanager.core.error.UsernameAlreadyExistsException;
-import com.accenture.recipemanager.core.security.user.User;
-import com.accenture.recipemanager.core.security.user.dto.UserSignUpDTO;
+import com.markteplace.core.error.UsernameAlreadyExistsException;
+import com.markteplace.domain.user.User;
+import com.markteplace.domain.user.dto.UserSignUpDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

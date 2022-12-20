@@ -1,4 +1,4 @@
-package com.accenture.recipemanager.core.security;
+package com.markteplace.core.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
