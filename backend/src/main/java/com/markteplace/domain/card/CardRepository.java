@@ -2,6 +2,8 @@ package com.markteplace.domain.card;
 
 import com.markteplace.core.generic.AbstractEntityRepository;
 import com.markteplace.domain.cardmarketoffer.CardMarketOffer;
+import org.springframework.stereotype.Repository;
 
-public interface CardMarketOfferRepository extends AbstractEntityRepository<CardMarketOffer> {
+@Repository
+public interface CardRepository extends AbstractEntityRepository<Card> {
 }

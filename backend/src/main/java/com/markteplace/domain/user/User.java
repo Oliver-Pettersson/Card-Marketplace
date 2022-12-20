@@ -22,10 +22,11 @@ public class User extends AbstractEntity {
     @JoinColumn(name = "user_id")
     private List<Deck> decks;
 
-    public User(String username, String password, int coins) {
+    public User(String username, String password, int coins, List<Deck> decks) {
         this.username = username;
         this.password = password;
         this.coins = coins;
+        this.decks = decks;
     }
 
     public User() {
@@ -54,5 +55,14 @@ public class User extends AbstractEntity {
 
     public User setCoins(int heightInCM) {
         this.coins = heightInCM; return this;
+    }
+
+    public List<Deck> getDecks() {
+        return decks;
+    }
+
+    public User setDecks(List<Deck> decks) {
+        this.decks = decks;
+        return this;
     }
 }
