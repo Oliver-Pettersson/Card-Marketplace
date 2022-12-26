@@ -9,11 +9,13 @@ import { SnackbarContextProvider } from "./contexts/SnackbarContext";
 import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
 import Navbar from "./components/atoms/Navbar/Navbar";
 import DeckPage from "./components/pages/DeckPage/DeckPage";
+import { DataContextProvider } from "./contexts/DataContext";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthenticationContextProvider>
+        <DataContextProvider>
         <SnackbarContextProvider>
           <Navbar />
           <Routes>
@@ -27,6 +29,7 @@ function App() {
             </Route>
           </Routes>
         </SnackbarContextProvider>
+        </DataContextProvider>
       </AuthenticationContextProvider>
     </BrowserRouter>
   );
