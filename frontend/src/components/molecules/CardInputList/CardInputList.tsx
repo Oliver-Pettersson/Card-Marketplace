@@ -1,6 +1,7 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Button, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useData } from "../../../contexts/DataContext";
 import CardSearchBar from "../../atoms/CardSearchBar/CardSearchBar";
 
 interface PropsType {
@@ -8,6 +9,8 @@ interface PropsType {
 }
 
 export default function CardInputList({setFormikFieldValue} : PropsType) {
+  const {cards} = useData();
+  const [options, setOptions] = useState(cards);
   const defaultItem = {
     id: "",
     name: "",
@@ -25,13 +28,14 @@ export default function CardInputList({setFormikFieldValue} : PropsType) {
       {cardList.map((row, index) => (
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <CardSearchBar
+          options={options}
             sx={{ width: "70%" }}
-            
             value={row}
             onSelection={(value) => {
               const newArray = [...cardList];
               newArray[index] = value
               setCardList(newArray);
+              setOptions(options.filter((loopValue) => loopValue.id !== value.id))
             }}
           />
           {cardList.length > 1 && (

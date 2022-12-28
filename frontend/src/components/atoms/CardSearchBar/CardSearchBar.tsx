@@ -3,6 +3,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useData } from "../../../contexts/DataContext";
+import CardEntity from "../../../models/Card/CardEntity";
 import CardSearchDTO from "../../../models/Card/CardSearchDTO";
 import MuiTextField from "../../atoms/MuiTextField/MuiTextField";
 interface PropsType {
@@ -10,24 +11,24 @@ interface PropsType {
   textFieldProps?: TextFieldProps;
   sx?: SxProps;
   value?: CardSearchDTO;
+  options?: CardEntity[]
 }
 
 export default function CardSearchBar({
   onSelection,
   textFieldProps,
   sx,
-  value
+  value,
+  options
 }: PropsType) {
-  const {cards} = useData()
-  console.log("cars", cards);
-  
+  const {cards} = useData()  
 
   return (
     <Autocomplete
     value={value}
       sx={sx}
       onChange={(event, value) => value && onSelection(value)}
-      options={cards}
+      options={options || cards}
       disablePortal
       autoHighlight
       isOptionEqualToValue={(option, value) => option.id === value.id}

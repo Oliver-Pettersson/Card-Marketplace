@@ -32,7 +32,7 @@ export default function CreateDeckDialog({ open, setOpen }: PropsType) {
             </DialogContent>
             <DialogActions>
               <Button onClick={() => setOpen(false)}>Cancel</Button>
-              <Button>Submit</Button>
+              <Button type="submit">Submit</Button>
             </DialogActions>
           </Form>
         )}
