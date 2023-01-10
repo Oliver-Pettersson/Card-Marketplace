@@ -11,7 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthenticationContext";
 
 export default function Navbar() {
-  const pages = [{ name: "Home", path: "/" }];
+  const pages = [{ name: "Home", path: "/" }, { name: "Decks", path: "/decks" }, { name: "Inventory", path: "/inventory" }];
   const { isProcessingAuthentication, logout } = useAuth();
   const navigate = useNavigate();
   const path = useLocation().pathname;

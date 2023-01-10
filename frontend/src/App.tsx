@@ -8,23 +8,32 @@ import { AuthenticationContextProvider } from "./contexts/AuthenticationContext"
 import { SnackbarContextProvider } from "./contexts/SnackbarContext";
 import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
 import Navbar from "./components/atoms/Navbar/Navbar";
-import { Inventory } from "./components/pages/Other/Inventory";
+import DeckPage from "./components/pages/DeckPage/DeckPage";
+import { DataContextProvider } from "./contexts/DataContext";
+import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthenticationContextProvider>
+        <DataContextProvider>
         <SnackbarContextProvider>
           <Navbar />
           <Routes>
-            <Route path="/inventory" element={<Inventory />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/" element={<ProtectedRoute />}>
               <Route path="/" element={<HomePage />} />
             </Route>
+            <Route path="/decks" element={<ProtectedRoute />}>
+              <Route path="/decks" element={<DeckPage />} />
+            </Route>
+            <Route path="/inventory" element={<ProtectedRoute />}>
+              <Route path="/inventory" element={<InventoryPage />} />
+            </Route>
           </Routes>
         </SnackbarContextProvider>
+        </DataContextProvider>
       </AuthenticationContextProvider>
     </BrowserRouter>
   );
