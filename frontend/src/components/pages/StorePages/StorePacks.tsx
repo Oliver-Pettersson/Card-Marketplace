@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { Card, CardType } from "../../atoms/Card";
+import { useEffect, useState } from "react";
 import { Pack, PackProps } from "../../molecules/Pack";
 
 export function StorePacks() {
   const [packs, setPacks] = useState<PackProps[]>([]);
-
+  useEffect(() => {
+    genPacksTemp();
+  });
   return (
     <div>
-      <button onClick={genPacksTemp}>Load market</button>
       <div style={flex}>
         {packs.map((pack: PackProps) => {
           return (

@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardType } from "../../atoms/Card";
 import { BuyableCard } from "../../molecules/BuyableCard";
 
 export function StoreCards() {
   const [cards, setCards] = useState<CardType[]>([]);
+  useEffect(() => {
+    genCardsTemp();
+  });
   return (
     <div>
-      <button onClick={genCardsTemp}>Load market</button>
       <div style={flex}>
         {cards.map((card: CardType) => {
           return (
