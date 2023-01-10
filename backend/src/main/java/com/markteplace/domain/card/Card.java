@@ -19,7 +19,7 @@ public class Card extends AbstractEntity {
     private LocalDateTime creation_timestamp;
 
     @ManyToOne
-    @JoinColumn(name = "card_status_id", nullable = false)
+    @JoinColumn(name = "card_stats_id", nullable = false)
     private CardStats cardStats;
 
     public Card(String name, String image, LocalDateTime creation_timestamp, CardStats cardStats) {
