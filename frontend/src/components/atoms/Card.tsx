@@ -1,4 +1,5 @@
 export interface CardType {
+  id?: string;
   img: string;
   name: string;
   energy: number;

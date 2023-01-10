@@ -4,7 +4,7 @@ import { Pack, PackProps } from "../../molecules/Pack";
 export function StorePacks() {
   const [packs, setPacks] = useState<PackProps[]>([]);
   useEffect(() => {
-    genPacksTemp();
+    genPacks();
   });
   return (
     <div>
@@ -24,13 +24,13 @@ export function StorePacks() {
     </div>
   );
 
-  function genPacksTemp() {
+  function genPacks() {
     let packsArray: PackProps[] = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 1; i++) {
       let pack: PackProps = {
         img: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
-        expansion: "Expansion name",
-        cost: 500,
+        expansion: "Base Set",
+        cost: 100,
       };
       packsArray.push(pack);
     }

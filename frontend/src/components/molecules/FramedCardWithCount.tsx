@@ -1,9 +1,9 @@
 import { Card } from "../atoms/Card";
 interface Props {
-  img: string;
+  imgage: string;
   name: string;
-  atk: number;
-  hp: number;
+  attack: number;
+  health: number;
   energy: number;
   count: number;
 }
@@ -13,10 +13,10 @@ export function FramedCardWithCount(props: Props) {
     <div style={frame}>
       <div style={center}>
         <Card
-          img={props.img}
+          img={props.imgage}
           name={props.name}
-          atk={props.atk}
-          hp={props.hp}
+          atk={props.attack}
+          hp={props.health}
           energy={props.energy}
         />
       </div>

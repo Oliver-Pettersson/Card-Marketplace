@@ -28,9 +28,10 @@ export function StoreCards() {
       </div>
     </div>
   );
+
   function genCardsTemp() {
     let cardsArray: CardType[] = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 49; i++) {
       let card: CardType = {
         img: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
