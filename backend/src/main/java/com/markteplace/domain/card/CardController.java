@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/card-market-offer")
+@RequestMapping("/card")
 public class CardController extends AbstractEntityController<Card, CardDTO> {
     public CardController(AbstractEntityService<Card> service, DTOMapper<Card, CardDTO> mapper) {
         super(service, mapper);
