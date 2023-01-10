@@ -1,9 +1,9 @@
-interface Props {
+export interface PackProps {
   img: string;
   expansion: string;
   cost: number;
 }
-export function Pack(props: Props) {
+export function Pack(props: PackProps) {
   return (
     <div style={frame}>
       <div style={center}>

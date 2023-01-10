@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CardType } from "../../atoms/Card";
 import { BuyableCard } from "../../molecules/BuyableCard";
 
-export function Store_Cards() {
+export function StoreCards() {
   const [cards, setCards] = useState<CardType[]>([]);
   return (
     <div>
