@@ -3,8 +3,6 @@ package com.markteplace.domain.cardtradeoffer;
 import com.markteplace.core.error.InvalidStringException;
 import com.markteplace.core.generic.AbstractEntityRepository;
 import com.markteplace.core.generic.AbstractEntityServiceImpl;
-import com.markteplace.domain.card.Card;
-import com.markteplace.domain.carduser.CardUser;
 import com.markteplace.domain.carduser.CardUserService;
 import com.markteplace.domain.user.User;
 import org.slf4j.Logger;
@@ -12,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 @Service
 public class CardTradeOfferServiceImpl extends AbstractEntityServiceImpl<CardTradeOffer> implements CardTradeOfferService {
@@ -33,5 +32,10 @@ public class CardTradeOfferServiceImpl extends AbstractEntityServiceImpl<CardTra
         entity.setOfferUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 
         return super.create(entity);
+    }
+
+    @Override
+    public Collection<CardTradeOffer> getOpenTradeOffers() {
+        return ((CardTradeOfferRepository) repository).findAllByCardTransactionIsNull();
     }
 }
