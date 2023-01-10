@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "card_status")
+@Table(name = "card_stats")
 public class CardStats extends AbstractEntity {
     @Column(name = "health", nullable = false)
     private int health;
