@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardType } from "../../atoms/Card";
 
 export function Store_Packs() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<CardType[]>([]);
   return (
     <div>
       <button onClick={genCardsTemp}>Load market</button>
@@ -20,8 +20,8 @@ export function Store_Packs() {
     </div>
   );
   function genCardsTemp() {
-    let cardsArray = [];
-    for (let i = 0; i < 5; i++) {
+    let cardsArray: CardType[] = [];
+    for (let i = 0; i < 50; i++) {
       let card: CardType = {
         img: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
@@ -29,7 +29,8 @@ export function Store_Packs() {
         atk: 5,
         hp: 5,
       };
-      cardsArray.push();
+      cardsArray.push(card);
     }
+    setCards(cardsArray);
   }
 }
