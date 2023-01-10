@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
 import Navbar from "./components/atoms/Navbar/Navbar";
 import DeckPage from "./components/pages/DeckPage/DeckPage";
 import { DataContextProvider } from "./contexts/DataContext";
+import { Inventory } from "./components/pages/Other/Inventory";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <SnackbarContextProvider>
           <Navbar />
           <Routes>
+            <Route path="/inventory" element={<Inventory />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/" element={<ProtectedRoute />}>
