@@ -1,4 +1,4 @@
-import { Card } from "../atoms/Card";
+import { PlayCard } from "../../atoms/Card/PlayCard";
 interface Props {
   img: string;
   name: string;
@@ -12,7 +12,7 @@ export function FramedCardWithCount(props: Props) {
   return (
     <div style={frame}>
       <div style={center}>
-        <Card
+        <PlayCard
           img={props.img}
           name={props.name}
           atk={props.atk}

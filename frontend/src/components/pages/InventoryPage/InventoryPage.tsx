@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Card, CardType } from "../../atoms/Card";
-import { FramedCardWithCount } from "../../molecules/FramedCardWithCount";
+import { CardType } from "../../atoms/Card/PlayCard";
+import { FramedCardWithCount } from "../../molecules/FramedCardWithCount/FramedCardWithCount";
 
 export interface CardData extends CardType {
   count: number;
@@ -10,7 +10,7 @@ export interface CardData extends CardType {
   hp: number;
 }
 
-export function Inventory() {
+export function InventoryPage() {
   const [cards, setCards] = useState<CardData[]>([]);
   return (
     <div>

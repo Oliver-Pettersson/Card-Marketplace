@@ -1,3 +1,5 @@
+import { Card, CardMedia } from "@mui/material";
+
 export interface CardType {
   img: string;
   name: string;
@@ -5,17 +7,17 @@ export interface CardType {
   atk: number;
   hp: number;
 }
-export function Card(props: CardType) {
+export function PlayCard(props: CardType) {
   return (
-    <div style={frame}>
-      <img style={img} src={props.img} />
+    <Card style={frame}>
+      <CardMedia sx={img} image={props.img} />
       <div>{props.name}</div>
       <ul>
         <li>{props.energy} Energy</li>
         <li>{props.atk} ATK</li>
         <li>{props.hp} HP</li>
       </ul>
-    </div>
+    </Card>
   );
 }
 
@@ -27,4 +29,5 @@ const frame = {
 const img = {
   height: "250px",
   width: "140px",
+  objectFit: "cover"
 };

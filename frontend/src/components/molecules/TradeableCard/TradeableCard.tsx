@@ -1,4 +1,4 @@
-import { Card } from "../atoms/Card";
+import { PlayCard } from "../../atoms/Card/PlayCard";
 interface Props {
   cardImg: string;
   cardName: string;
@@ -6,14 +6,14 @@ interface Props {
   cardHp: number;
   cardEnergy: number;
   stock: number;
-  cost: number;
+  request: string;
 }
 
-export function BuyableCard(props: Props) {
+export function TradeableCard(props: Props) {
   return (
     <div style={frame}>
       <div style={center}>
-        <Card
+        <PlayCard
           img={props.cardImg}
           name={props.cardName}
           atk={props.cardAtk}
@@ -22,9 +22,9 @@ export function BuyableCard(props: Props) {
         />
       </div>
       <div>
-        <h5 style={smallMargin}>Stock: {props.stock}</h5>
-        <h5 style={smallMargin}>Costs: {props.cost} Coins</h5>
-        <button>Buy</button>
+        <h5>Wants Card:</h5>
+        {props.request}
+        <button>Trade</button>
       </div>
     </div>
   );
@@ -38,11 +38,6 @@ const frame = {
 
 const center = {
   padding: "20px",
-  "padding-bottom": "0px",
   display: "flex",
   "justify-content": "center",
-};
-
-const smallMargin = {
-  margin: "2px",
 };

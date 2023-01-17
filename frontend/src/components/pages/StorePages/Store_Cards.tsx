@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CardType } from "../../atoms/Card";
-import { BuyableCard } from "../../molecules/BuyableCard";
+import { CardType } from "../../atoms/Card/PlayCard";
+import { BuyableCard } from "../../molecules/BuyableCard/BuyableCard";
 
 export function Store_Cards() {
   const [cards, setCards] = useState<CardType[]>([]);
