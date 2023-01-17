@@ -58,16 +58,16 @@ insert into card_user (id, card_id, user_id) values ('06044a2c-d448-4628-9ce3-2e
 --insert into card_user (id, card_id, user_id) values ('f1ae7641-cd61-4963-8fc5-87d7532766d7', 'd8b8227c-9b38-4cc0-8335-268631e51351', 'f9d966b7-3859-40bb-961f-c7f00e83d3ca');
 
 
-insert into card_deck (id, card_user_id, deck_id) values ('0fd5c98f-1d86-4364-8b79-b6221d442117', 'b8f65d84-ffd6-4dd5-86ea-6fec22b6ff68', '5c11266a-e59d-4eb9-9b47-f188feb34d03');
-insert into card_deck (id, card_user_id, deck_id) values ('04fda426-1ae1-41ed-83ed-3929830dc61a', '8ca3a2e7-b6a9-4bdd-bd51-acc607bd086a', '567a9402-5be6-4d07-9d69-2d9921e4c197');
+insert into card_deck (card_user_id, deck_id) values ('b8f65d84-ffd6-4dd5-86ea-6fec22b6ff68', '5c11266a-e59d-4eb9-9b47-f188feb34d03');
+insert into card_deck (card_user_id, deck_id) values ('8ca3a2e7-b6a9-4bdd-bd51-acc607bd086a', '567a9402-5be6-4d07-9d69-2d9921e4c197');
 
-insert into card_deck (id, card_user_id, deck_id) values ('f017b2a2-ad67-4c7a-aaff-ec0a84bf80aa', '2681e9f2-2d50-4b05-8cb3-af7f58f24e4c', '3ba92543-c02d-4f03-b62e-356cd696498b');
-insert into card_deck (id, card_user_id, deck_id) values ('723ee5f2-5818-4204-957f-ed746440e191', '92b3f415-1368-408a-b534-5fb340ff565b', '48f00b7c-15be-4896-9175-8d1c11709dac');
-insert into card_deck (id, card_user_id, deck_id) values ('634f1c9b-3502-4a51-a831-12963cacb356', '27aa9d3b-4b11-4770-88fa-8117bc0186b0', '295dcb5c-a357-43dc-b1b1-9d02f6e9c14a');
-insert into card_deck (id, card_user_id, deck_id) values ('ccb22c76-d522-426f-9ed5-7316bd540284', 'f0702196-d478-4fec-a943-6b98e0a5a6ff', 'ddc298d2-9fb0-424b-ba53-da8231c97f75');
-insert into card_deck (id, card_user_id, deck_id) values ('75853648-fe8f-407f-8ff4-e25fe6b6c19c', 'bba27b5f-30fd-48d5-9e4d-66fec71c3e98', 'a8c02e8c-503e-4e16-96ff-2f317fb15c27');
-insert into card_deck (id, card_user_id, deck_id) values ('c8e63b65-7f24-4610-aca5-b8337da5fd78', '29cc79d6-badb-48d1-b60d-1fb4ac2fe6bc', 'eba1e63c-a561-4f51-8c40-50d528143ddb');
-insert into card_deck (id, card_user_id, deck_id) values ('84b8e045-ad98-4a5c-815c-3104dc918d00', '06044a2c-d448-4628-9ce3-2e0d951af5e1', 'eceb48c2-fd56-4496-bc80-ae09a700809a');
+insert into card_deck (card_user_id, deck_id) values ('2681e9f2-2d50-4b05-8cb3-af7f58f24e4c', '3ba92543-c02d-4f03-b62e-356cd696498b');
+insert into card_deck (card_user_id, deck_id) values ('92b3f415-1368-408a-b534-5fb340ff565b', '48f00b7c-15be-4896-9175-8d1c11709dac');
+insert into card_deck (card_user_id, deck_id) values ('27aa9d3b-4b11-4770-88fa-8117bc0186b0', '295dcb5c-a357-43dc-b1b1-9d02f6e9c14a');
+insert into card_deck (card_user_id, deck_id) values ('f0702196-d478-4fec-a943-6b98e0a5a6ff', 'ddc298d2-9fb0-424b-ba53-da8231c97f75');
+insert into card_deck (card_user_id, deck_id) values ('bba27b5f-30fd-48d5-9e4d-66fec71c3e98', 'a8c02e8c-503e-4e16-96ff-2f317fb15c27');
+insert into card_deck (card_user_id, deck_id) values ('29cc79d6-badb-48d1-b60d-1fb4ac2fe6bc', 'eba1e63c-a561-4f51-8c40-50d528143ddb');
+insert into card_deck (card_user_id, deck_id) values ('06044a2c-d448-4628-9ce3-2e0d951af5e1', 'eceb48c2-fd56-4496-bc80-ae09a700809a');
 --insert into card_deck (id, card_user_id, deck_id) values ('5214c162-42a5-4e15-b43a-c1bc3b813d3f', 'f1ae7641-cd61-4963-8fc5-87d7532766d7', 'ece2eceb-b817-4dc4-80b6-7f9a2e8ea71e');
 -- 7 and 10 might not work
 
