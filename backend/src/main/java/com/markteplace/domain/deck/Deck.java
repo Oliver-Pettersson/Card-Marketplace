@@ -12,6 +12,7 @@ import java.util.List;
 public class Deck extends AbstractEntity {
     @Column(name = "name", nullable = false)
     private String name;
+
     @ManyToMany
     @JoinTable(
             name = "card_deck",
