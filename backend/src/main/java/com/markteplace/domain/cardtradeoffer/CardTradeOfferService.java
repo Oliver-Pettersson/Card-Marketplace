@@ -7,4 +7,5 @@ import java.util.Collection;
 
 public interface CardTradeOfferService extends AbstractEntityService<CardTradeOffer> {
     Collection<CardTradeOffer> getOpenTradeOffers();
+    CardTradeOffer acceptOffer(String offerId);
 }

@@ -24,9 +24,16 @@ public class CardTradeOfferController extends AbstractEntityController<CardTrade
     }
 
     @GetMapping("/open-offers")
-    public ResponseEntity<Collection<CardTradeOfferDTO>> findAll() {
+    public ResponseEntity<Collection<CardTradeOfferDTO>> openOffers() {
         Collection<CardTradeOffer> dms = ((CardTradeOfferService) service).getOpenTradeOffers();
 
         return new ResponseEntity<>(mapper.toDTOs(dms), HttpStatus.OK);
+    }
+
+    @PostMapping("/accept/{id}")
+    public ResponseEntity<CardTradeOfferDTO> acceptOffer(String offerId) {
+        CardTradeOffer dms = ((CardTradeOfferService) service).acceptOffer(offerId);
+
+        return new ResponseEntity<>(mapper.toDTO(dms), HttpStatus.OK);
     }
 }
