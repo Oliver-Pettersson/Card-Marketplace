@@ -16,7 +16,8 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Packs", path: "/shop/packs" },
     { name: "Cards", path: "/shop/cards" },
-    { name: "Packs", path: "/shop/packs" },
+    { name: "Decks", path: "/decks" },
+    { name: "Inventory", path: "/inventory" },
   ];
   const { isProcessingAuthentication, logout } = useAuth();
   const navigate = useNavigate();
