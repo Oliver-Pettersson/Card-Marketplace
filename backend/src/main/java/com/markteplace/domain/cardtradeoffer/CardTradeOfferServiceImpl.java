@@ -24,7 +24,9 @@ public class CardTradeOfferServiceImpl extends AbstractEntityServiceImpl<CardTra
     private CardService cardService;
     private CardTransactionService cardTransactionService;
 
-    public CardTradeOfferServiceImpl(AbstractEntityRepository<CardTradeOffer> repository, Logger logger, CardUserService cardUserService, CardService cardService, CardTransactionService cardTransactionService) {
+    public CardTradeOfferServiceImpl(AbstractEntityRepository<CardTradeOffer> repository, Logger logger,
+                                     CardUserService cardUserService, CardService cardService,
+                                     CardTransactionService cardTransactionService) {
         super(repository, logger);
         this.cardUserService = cardUserService;
         this.cardService = cardService;
