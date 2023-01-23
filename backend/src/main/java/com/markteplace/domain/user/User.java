@@ -46,15 +46,17 @@ public class User extends AbstractEntity {
     }
 
     public User setPassword(String password) {
-        this.password = password; return this;
+        this.password = password;
+        return this;
     }
 
     public int getCoins() {
         return coins;
     }
 
-    public User setCoins(int heightInCM) {
-        this.coins = heightInCM; return this;
+    public User setCoins(int coins) {
+        this.coins = coins;
+        return this;
     }
 
     public List<Deck> getDecks() {

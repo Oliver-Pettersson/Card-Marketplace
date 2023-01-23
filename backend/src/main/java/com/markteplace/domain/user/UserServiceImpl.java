@@ -37,6 +37,7 @@ public class UserServiceImpl extends AbstractEntityServiceImpl<User> implements 
      */
     @Override
     public User create(User entity) {
+        entity.setCoins(1000);
         entity.setPassword(passwordEncoder.encode(entity.getPassword()));
         return super.create(entity);
     }

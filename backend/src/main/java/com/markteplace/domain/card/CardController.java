@@ -13,4 +13,6 @@ public class CardController extends AbstractEntityController<Card, CardDTO> {
     public CardController(AbstractEntityService<Card> service, DTOMapper<Card, CardDTO> mapper) {
         super(service, mapper);
     }
+
+
 }

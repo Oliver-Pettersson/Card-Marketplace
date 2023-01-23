@@ -1,20 +1,20 @@
 package com.markteplace.domain.cardtradeoffer.dto;
 
 import com.markteplace.core.generic.AbstractEntityDTO;
+import com.markteplace.domain.card.Card;
 import com.markteplace.domain.cardtransaction.CardTransaction;
-import com.markteplace.domain.carduser.CardUser;
 import com.markteplace.domain.user.User;
 
 import java.time.LocalDateTime;
 
 public class CardTradeOfferDTO extends AbstractEntityDTO {
     private User offerUser;
-    private CardUser offerCardUser;
-    private CardUser accepterCardUser;
+    private Card offerCardUser;
+    private Card accepterCardUser;
     private LocalDateTime offerTimestamp;
     private CardTransaction cardTransaction;
 
-    public CardTradeOfferDTO(User offerUser, CardUser offerCardUser, CardUser accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
+    public CardTradeOfferDTO(User offerUser, Card offerCardUser, Card accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
         this.offerUser = offerUser;
         this.offerCardUser = offerCardUser;
         this.accepterCardUser = accepterCardUser;
@@ -34,20 +34,20 @@ public class CardTradeOfferDTO extends AbstractEntityDTO {
         return this;
     }
 
-    public CardUser getOfferCardUser() {
+    public Card getOfferCardUser() {
         return offerCardUser;
     }
 
-    public CardTradeOfferDTO setOfferCardUser(CardUser offerCardUser) {
+    public CardTradeOfferDTO setOfferCardUser(Card offerCardUser) {
         this.offerCardUser = offerCardUser;
         return this;
     }
 
-    public CardUser getAccepterCardUser() {
+    public Card getAccepterCardUser() {
         return accepterCardUser;
     }
 
-    public CardTradeOfferDTO setAccepterCardUser(CardUser accepterCardUser) {
+    public CardTradeOfferDTO setAccepterCardUser(Card accepterCardUser) {
         this.accepterCardUser = accepterCardUser;
         return this;
     }
