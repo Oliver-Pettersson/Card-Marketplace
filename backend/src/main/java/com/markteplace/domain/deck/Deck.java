@@ -37,7 +37,6 @@ public class Deck extends AbstractEntity {
         return this;
     }
 
-
     public List<CardUser> getCards() {
         return cards;
     }

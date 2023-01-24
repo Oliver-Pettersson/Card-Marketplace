@@ -1,5 +1,6 @@
 package com.markteplace.domain.carduser;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.markteplace.core.generic.AbstractEntity;
 import com.markteplace.domain.card.Card;
 import com.markteplace.domain.deck.Deck;
@@ -15,10 +16,12 @@ public class CardUser extends AbstractEntity {
     @JoinColumn(name = "card_id", nullable = false)
     private Card card;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "cards")
     private List<Deck> decks;
 

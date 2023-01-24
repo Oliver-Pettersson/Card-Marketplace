@@ -1,4 +1,4 @@
-import { PlayCard } from "../../atoms/Card/PlayCard";
+import { PlayCard } from "../../atoms/PlayCard/PlayCard";
 interface Props {
   cardImg: string;
   cardName: string;
@@ -14,10 +14,10 @@ export function TradeableCard(props: Props) {
     <div style={frame}>
       <div style={center}>
         <PlayCard
-          img={props.cardImg}
+          image={props.cardImg}
           name={props.cardName}
-          atk={props.cardAtk}
-          hp={props.cardHp}
+          attack={props.cardAtk}
+          health={props.cardHp}
           energy={props.cardEnergy}
         />
       </div>

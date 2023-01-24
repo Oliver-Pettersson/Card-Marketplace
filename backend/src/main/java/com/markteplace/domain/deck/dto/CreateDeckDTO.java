@@ -6,6 +6,14 @@ public class CreateDeckDTO {
     private String name;
     private List<String> cards;
 
+    public CreateDeckDTO() {
+    }
+
+    public CreateDeckDTO(String name, List<String> cards) {
+        this.name = name;
+        this.cards = cards;
+    }
+
     public String getName() {
         return name;
     }

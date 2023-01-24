@@ -26,10 +26,9 @@ export const DataContextProvider = ({ children }: DataProviderProps) => {
   const { principal } = useAuth();
 
   const loadDecks = async () => {
-    const decks = (await UserService().getSelf())
+    const {decks} = (await UserService().getSelf())
     console.log(decks);
-    
-    setDecks(decks.decks)
+    setDecks(decks)
   }
 
   const loadCards = async () => {

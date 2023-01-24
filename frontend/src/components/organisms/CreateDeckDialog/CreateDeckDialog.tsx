@@ -20,9 +20,14 @@ export default function CreateDeckDialog({ open, setOpen }: PropsType) {
         initialValues={{ name: "", cards: [] }}
         onSubmit={async (values) => {
           console.log(values);
+          try {
           await DeckService().create(values)
           refreshDecks()
-          setOpen(false)
+          setOpen(false)}
+          catch (exception) {
+            console.log(exception);
+            
+          }
         }}
       >
         {({ handleChange, setFieldValue }) => (
