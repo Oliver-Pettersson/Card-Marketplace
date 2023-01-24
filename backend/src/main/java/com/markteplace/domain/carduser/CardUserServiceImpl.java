@@ -9,6 +9,7 @@ import com.markteplace.domain.carduser.dto.CardCollectionFromUserDTO;
 import com.markteplace.domain.user.User;
 import com.markteplace.domain.user.UserService;
 import org.slf4j.Logger;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,8 @@ public class CardUserServiceImpl extends AbstractEntityServiceImpl<CardUser> imp
     private static final Random random = new Random();
 
 
-    public CardUserServiceImpl(AbstractEntityRepository<CardUser> repository, Logger logger, CardService cardService, UserService userService) {
+    public CardUserServiceImpl(AbstractEntityRepository<CardUser> repository, Logger logger,
+                               @Lazy CardService cardService, UserService userService) {
         super(repository, logger);
         this.cardService = cardService;
         this.userService = userService;
