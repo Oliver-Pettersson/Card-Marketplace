@@ -6,10 +6,15 @@ import com.markteplace.domain.user.User;
 import java.time.LocalDateTime;
 
 public class CardTransactionDTO extends AbstractEntityDTO {
-    private User newUser;
+    private String newUser;
     private LocalDateTime transactionTimestamp;
 
     public CardTransactionDTO(User newUser, LocalDateTime transactionTimestamp) {
+        this.newUser = newUser.getUsername();
+        this.transactionTimestamp = transactionTimestamp;
+    }
+
+    public CardTransactionDTO(String newUser, LocalDateTime transactionTimestamp) {
         this.newUser = newUser;
         this.transactionTimestamp = transactionTimestamp;
     }
@@ -18,11 +23,16 @@ public class CardTransactionDTO extends AbstractEntityDTO {
     }
 
     public User getNewUser() {
-        return newUser;
+        return new User().setUsername(newUser);
+    }
+
+    public CardTransactionDTO setNewUser(String newUser) {
+        this.newUser = newUser;
+        return this;
     }
 
     public CardTransactionDTO setNewUser(User newUser) {
-        this.newUser = newUser;
+        this.newUser = newUser.getUsername();
         return this;
     }
 

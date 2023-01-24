@@ -6,9 +6,14 @@ import com.markteplace.domain.user.User;
 
 public class CardUserDTO extends AbstractEntityDTO {
     private Card card;
-    private User user;
+    private String user;
 
     public CardUserDTO(Card card, User user) {
+        this.card = card;
+        this.user = user.getUsername();
+    }
+
+    public CardUserDTO(Card card, String user) {
         this.card = card;
         this.user = user;
     }
@@ -26,10 +31,15 @@ public class CardUserDTO extends AbstractEntityDTO {
     }
 
     public User getUser() {
-        return user;
+        return new User().setUsername(user);
     }
 
     public CardUserDTO setUser(User user) {
+        this.user = user.getUsername();
+        return this;
+    }
+
+    public CardUserDTO setUser(String user) {
         this.user = user;
         return this;
     }
