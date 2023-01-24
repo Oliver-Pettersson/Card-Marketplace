@@ -18,7 +18,7 @@ public class User extends AbstractEntity {
     @Column(name = "coins")
     private int coins;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private List<Deck> decks;
 
