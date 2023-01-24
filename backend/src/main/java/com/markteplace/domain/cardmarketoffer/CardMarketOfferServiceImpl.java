@@ -4,7 +4,6 @@ import com.markteplace.core.error.InvalidStringException;
 import com.markteplace.core.error.NotFoundException;
 import com.markteplace.core.generic.AbstractEntityRepository;
 import com.markteplace.core.generic.AbstractEntityServiceImpl;
-import com.markteplace.domain.card.CardService;
 import com.markteplace.domain.cardtransaction.CardTransaction;
 import com.markteplace.domain.cardtransaction.CardTransactionService;
 import com.markteplace.domain.carduser.CardUser;
@@ -58,7 +57,7 @@ public class CardMarketOfferServiceImpl extends AbstractEntityServiceImpl<CardMa
         if (cardMarketOffer.getCardTransaction() != null) throw new NotFoundException("transaction is already finished");
         if (currentUser.getCoins() < cardMarketOffer.getPrice()) throw new NotFoundException("not enough cash");
 
-        CardUser card = cardUserService.findCardFromUser(cardMarketOffer.getUser().getId().toString(),
+        CardUser card = cardUserService.findCardUserByUserAndCard(cardMarketOffer.getUser().getId().toString(),
                 cardMarketOffer.getCard().getId().toString());
         if (card == null) throw new NotFoundException("User does not have the card");
 
