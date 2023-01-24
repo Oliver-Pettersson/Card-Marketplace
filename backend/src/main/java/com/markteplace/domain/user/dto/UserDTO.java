@@ -2,13 +2,15 @@ package com.markteplace.domain.user.dto;
 
 import com.markteplace.core.generic.AbstractEntityDTO;
 import com.markteplace.domain.deck.Deck;
+import com.markteplace.domain.deck.dto.DeckDTO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDTO extends AbstractEntityDTO {
     private String username;
     private int coins;
-    private List<Deck> decks;
+    private List<DeckDTO> decks;
 
     public UserDTO() {
     }
@@ -32,11 +34,21 @@ public class UserDTO extends AbstractEntityDTO {
     }
 
     public List<Deck> getDecks() {
-        return decks;
+        List<Deck> deck = new ArrayList<>();
+        for (DeckDTO deckDTO:decks) {
+             deck.add((Deck) new Deck()
+                     .setName(deckDTO.getName()).setCardsInDeck(deckDTO.getCardsInDeck()).setId(deckDTO.getId()));
+        }
+        return deck;
     }
 
     public UserDTO setDecks(List<Deck> decks) {
-        this.decks = decks;
+        List<DeckDTO> deckDTOS = new ArrayList<>();
+        for (Deck deck:decks) {
+            deckDTOS.add((DeckDTO) new DeckDTO()
+                    .setName(deck.getName()).setCardsInDeck(deck.getCardsInDeck()).setId(deck.getId()));
+        }
+        this.decks = deckDTOS;
         return this;
     }
 }
