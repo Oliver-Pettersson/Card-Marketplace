@@ -16,7 +16,7 @@ public class CardTradeOfferDTO extends AbstractEntityDTO {
     private LocalDateTime offerTimestamp;
     private CardTransaction cardTransaction;
 
-    public CardTradeOfferDTO(User offerUser, CardUser offerCardUser, CardUser accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
+    public CardTradeOfferDTO(String offerUser, CardUser offerCardUser, CardUser accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
         this.offerUser = offerUser;
         this.offerCardUser = offerCardUser;
         this.accepterCardUser = accepterCardUser;
@@ -24,7 +24,7 @@ public class CardTradeOfferDTO extends AbstractEntityDTO {
         this.cardTransaction = cardTransaction;
     }
 
-    public CardTradeOfferDTO(User offerUser, Card offerCardUser, Card accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
+    public CardTradeOfferDTO(User offerUser, CardUser offerCardUser, CardUser accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
         this.offerUser = offerUser.getUsername();
         this.offerCardUser = offerCardUser;
         this.accepterCardUser = accepterCardUser;
