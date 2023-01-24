@@ -1,13 +1,13 @@
-insert into users (id, coins, password, username) values ('8734e065-cb72-4c93-81ee-603b59f163fc', 5534, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'ecauderlie0');
-insert into users (id, coins, password, username) values ('e5f487f9-e92f-4fd1-873e-d7f97a8a8ee8', 8794, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'kolwen1');
-insert into users (id, coins, password, username) values ('b525aed0-dbc5-41bb-a636-863636bdf5fc', 2746, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'sdermott2');
-insert into users (id, coins, password, username) values ('cdc7e8d2-b965-42c4-bf1d-22ea3ff009a9', 2186, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'lcluett3');
-insert into users (id, coins, password, username) values ('23ca9740-cfe2-4898-af49-0fbef0ef31f5', 1290, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'icheson4');
-insert into users (id, coins, password, username) values ('ff3fae36-bd40-49ee-ad10-e85d1250033c', 6306, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'mgianilli5');
-insert into users (id, coins, password, username) values ('f9d966b7-3859-40bb-961f-c7f00e83d3ca', 6010, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'ahector6');
-insert into users (id, coins, password, username) values ('690c37ef-4731-4d46-b011-4527a5651215', 4946, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'msayce7');
-insert into users (id, coins, password, username) values ('0b5fbc50-6ae6-4237-921f-9a95a972fb24', 4322, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'bgrishankov8');
-insert into users (id, coins, password, username) values ('cb10261c-4220-4ea6-a1f7-0366dfe76ae3', 3099, '$2a$10$bAC1oalT31sq76Ri5OfZfuzfKzUwAeJGeykb6TH1KgjZTdsY21OfC', 'tpavelka9');
+insert into users (id, coins, password, username) values ('8734e065-cb72-4c93-81ee-603b59f163fc', 5534, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'ecauderlie0');
+insert into users (id, coins, password, username) values ('e5f487f9-e92f-4fd1-873e-d7f97a8a8ee8', 8794, '$$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'kolwen1');
+insert into users (id, coins, password, username) values ('b525aed0-dbc5-41bb-a636-863636bdf5fc', 2746, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'sdermott2');
+insert into users (id, coins, password, username) values ('cdc7e8d2-b965-42c4-bf1d-22ea3ff009a9', 2186, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'lcluett3');
+insert into users (id, coins, password, username) values ('23ca9740-cfe2-4898-af49-0fbef0ef31f5', 1290, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'icheson4');
+insert into users (id, coins, password, username) values ('ff3fae36-bd40-49ee-ad10-e85d1250033c', 6306, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'mgianilli5');
+insert into users (id, coins, password, username) values ('f9d966b7-3859-40bb-961f-c7f00e83d3ca', 6010, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'ahector6');
+insert into users (id, coins, password, username) values ('690c37ef-4731-4d46-b011-4527a5651215', 4946, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'msayce7');
+insert into users (id, coins, password, username) values ('0b5fbc50-6ae6-4237-921f-9a95a972fb24', 4322, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'bgrishankov8');
+insert into users (id, coins, password, username) values ('cb10261c-4220-4ea6-a1f7-0366dfe76ae3', 3099, '$2a$12$4XF23hu/cIiC.TaQe.d8EezNZPna6oESK62osw0mHDCtr7PMX8MTO', 'tpavelka9');
 
 insert into card_stats (id, attack, energy, health) values ('d2fa0170-33be-41e6-ba6c-d469360080a7', 6, 2, 4);
 insert into card_stats (id, attack, energy, health) values ('d4dfed44-7728-41ff-817f-708c4c33c45e', 1, 7, 4);
