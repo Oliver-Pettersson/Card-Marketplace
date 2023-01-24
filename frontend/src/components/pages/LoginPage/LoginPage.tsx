@@ -27,7 +27,7 @@ export default function LoginPage() {
               console.log(values);
               login(values.username, values.password)
                 .then(() => navigate("/"))
-                .catch((response) =>
+                .catch(({response}) =>
                   displaySnackbarMessage(response.data, "error")
                 );
             }}
