@@ -1,6 +1,7 @@
 package com.markteplace.domain.cardtradeoffer;
 
 import com.markteplace.core.generic.AbstractEntity;
+import com.markteplace.domain.card.Card;
 import com.markteplace.domain.cardtransaction.CardTransaction;
 import com.markteplace.domain.carduser.CardUser;
 import com.markteplace.domain.user.User;
@@ -17,11 +18,11 @@ public class CardTradeOffer extends AbstractEntity {
 
     @ManyToOne
     @JoinColumn(name = "offer_card_user_id", nullable = false)
-    private CardUser offerCardUser;
+    private Card offerCardUser;
 
     @ManyToOne
     @JoinColumn(name = "accepter_card_user_id", nullable = false)
-    private CardUser accepterCardUser;
+    private Card accepterCardUser;
 
     @Column(name = "offer_timestamp", nullable = false)
     private LocalDateTime offerTimestamp;
@@ -30,7 +31,7 @@ public class CardTradeOffer extends AbstractEntity {
     @JoinColumn(name = "card_transaction_id")
     private CardTransaction cardTransaction;
 
-    public CardTradeOffer(User offerUser, CardUser offerCardUser, CardUser accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
+    public CardTradeOffer(User offerUser, Card offerCardUser, Card accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
         this.offerUser = offerUser;
         this.offerCardUser = offerCardUser;
         this.accepterCardUser = accepterCardUser;
@@ -50,20 +51,20 @@ public class CardTradeOffer extends AbstractEntity {
         return this;
     }
 
-    public CardUser getOfferCardUser() {
+    public Card getOfferCardUser() {
         return offerCardUser;
     }
 
-    public CardTradeOffer setOfferCardUser(CardUser offerCardUser) {
+    public CardTradeOffer setOfferCardUser(Card offerCardUser) {
         this.offerCardUser = offerCardUser;
         return this;
     }
 
-    public CardUser getAccepterCardUser() {
+    public Card getAccepterCardUser() {
         return accepterCardUser;
     }
 
-    public CardTradeOffer setAccepterCardUser(CardUser accepterCardUser) {
+    public CardTradeOffer setAccepterCardUser(Card accepterCardUser) {
         this.accepterCardUser = accepterCardUser;
         return this;
     }
