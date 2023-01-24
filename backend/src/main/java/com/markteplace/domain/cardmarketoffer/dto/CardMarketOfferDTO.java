@@ -4,17 +4,18 @@ import com.markteplace.core.generic.AbstractEntityDTO;
 import com.markteplace.domain.cardtransaction.CardTransaction;
 import com.markteplace.domain.carduser.CardUser;
 import com.markteplace.domain.user.User;
+import com.markteplace.domain.user.dto.UserDTO;
 
 import java.time.LocalDateTime;
 
 public class CardMarketOfferDTO extends AbstractEntityDTO {
     private int price;
     private CardUser card;
-    private User user;
+    private String user;
     private LocalDateTime transactionTimestamp;
     private CardTransaction cardTransaction;
 
-    public CardMarketOfferDTO(int price, CardUser card, User user, LocalDateTime transactionTimestamp, CardTransaction cardTransaction) {
+    public CardMarketOfferDTO(int price, CardUser card, String user, LocalDateTime transactionTimestamp, CardTransaction cardTransaction) {
         this.price = price;
         this.card = card;
         this.user = user;
@@ -44,11 +45,16 @@ public class CardMarketOfferDTO extends AbstractEntityDTO {
     }
 
     public User getUser() {
-        return user;
+        return new User().setUsername(user);
+    }
+
+    public CardMarketOfferDTO setUser(String user) {
+        this.user = user;
+        return this;
     }
 
     public CardMarketOfferDTO setUser(User user) {
-        this.user = user;
+        this.user = user.getUsername();
         return this;
     }
 
