@@ -25,12 +25,8 @@ public class CardUserServiceImpl extends AbstractEntityServiceImpl<CardUser> imp
     private static final Random random = new Random();
 
 
-<<<<<<< Updated upstream
-    public CardUserServiceImpl(AbstractEntityRepository<CardUser> repository, Logger logger,
-                               @Lazy CardService cardService, UserService userService) {
-=======
+
     public CardUserServiceImpl(AbstractEntityRepository<CardUser> repository, Logger logger, @Lazy CardService cardService, UserService userService) {
->>>>>>> Stashed changes
         super(repository, logger);
         this.cardService = cardService;
         this.userService = userService;
