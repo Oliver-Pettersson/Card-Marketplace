@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Pack, PackProps } from "../../molecules/Pack";
+import { Pack, PackProps } from "../../molecules/Pack/Pack";
 
 export function StorePacks() {
   const [packs, setPacks] = useState<PackProps[]>([]);

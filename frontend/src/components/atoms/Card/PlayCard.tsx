@@ -2,11 +2,11 @@ import { Card, CardMedia } from "@mui/material";
 
 export interface CardType {
   id?: string;
-  img: string;
-  name: string;
-  energy: number;
-  atk: number;
-  hp: number;
+  img?: string;
+  name?: string;
+  energy?: number;
+  atk?: number;
+  hp?: number;
 }
 export function PlayCard(props: CardType) {
   return (
@@ -30,5 +30,5 @@ const frame = {
 const img = {
   height: "250px",
   width: "140px",
-  objectFit: "cover"
+  objectFit: "cover",
 };

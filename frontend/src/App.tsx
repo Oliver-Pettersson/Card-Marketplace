@@ -8,11 +8,9 @@ import { AuthenticationContextProvider } from "./contexts/AuthenticationContext"
 import { SnackbarContextProvider } from "./contexts/SnackbarContext";
 import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
 import Navbar from "./components/atoms/Navbar/Navbar";
+import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
 import DeckPage from "./components/pages/DeckPage/DeckPage";
 import { DataContextProvider } from "./contexts/DataContext";
-import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
-import { StoreCards } from "./components/pages/StorePages/StoreCards";
-import { StorePacks } from "./components/pages/StorePages/StorePacks";
 
 function App() {
   return (
@@ -22,8 +20,6 @@ function App() {
           <SnackbarContextProvider>
             <Navbar />
             <Routes>
-              <Route path="/shop/packs" element={<StorePacks />} />
-              <Route path="/shop/cards" element={<StoreCards />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignUpPage />} />
               <Route path="/" element={<ProtectedRoute />}>
