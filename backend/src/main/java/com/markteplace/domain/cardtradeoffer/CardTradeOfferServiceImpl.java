@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.UUID;
 
 @Service
 public class CardTradeOfferServiceImpl extends AbstractEntityServiceImpl<CardTradeOffer> implements CardTradeOfferService {
@@ -58,11 +57,11 @@ public class CardTradeOfferServiceImpl extends AbstractEntityServiceImpl<CardTra
 
         if (cardTradeOffer.getCardTransaction() != null) throw new NotFoundException("transaction is already finished");
 
-        CardUser cardFromOfferCreator = cardUserService.findCardFromUser(cardTradeOffer.getOfferUser().getId().toString(), cardTradeOffer.getOfferCardUser().getId().toString());
+        CardUser cardFromOfferCreator = cardUserService.findCardUserByUserAndCard(cardTradeOffer.getOfferUser().getId().toString(), cardTradeOffer.getOfferCardUser().getId().toString());
         if (cardFromOfferCreator == null)
             throw new NotFoundException("User does not have the card");
 
-        CardUser cardFromCurrentUser = cardUserService.findCardFromUser(user.getId().toString(), cardTradeOffer.getAccepterCardUser().getId().toString());
+        CardUser cardFromCurrentUser = cardUserService.findCardUserByUserAndCard(user.getId().toString(), cardTradeOffer.getAccepterCardUser().getId().toString());
         if (cardFromCurrentUser == null)
             throw new NotFoundException("User does not have the card");
 
