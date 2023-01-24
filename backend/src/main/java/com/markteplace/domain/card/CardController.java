@@ -60,7 +60,7 @@ public class CardController extends AbstractEntityController<Card, CardDTO> {
     public ResponseEntity<Void> deleteById(@PathVariable String ignore) {
         return null;
     }
-}
+
     @GetMapping("/")
     public ResponseEntity<Collection<CardDTO>> findById() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
