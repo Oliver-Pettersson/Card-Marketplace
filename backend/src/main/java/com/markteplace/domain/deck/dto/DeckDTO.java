@@ -10,9 +10,9 @@ public class DeckDTO extends AbstractEntityDTO {
 
     private List<CardUser> cards;
 
-
-    public DeckDTO(String name) {
+    public DeckDTO(String name, List<CardUser> cards) {
         this.name = name;
+        this.cards = cards;
     }
 
     public DeckDTO() {
@@ -32,6 +32,15 @@ public class DeckDTO extends AbstractEntityDTO {
 
     public DeckDTO setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public List<CardUser> getCardsInDeck() {
+        return this.cards;
+    }
+
+    public DeckDTO setCardsInDeck(List<CardUser> cards) {
+        this.cards = cards;
         return this;
     }
 }
