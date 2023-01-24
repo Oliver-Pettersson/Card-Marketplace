@@ -1,10 +1,10 @@
 import { PlayCard } from "../../atoms/Card/PlayCard";
 interface Props {
-  cardImg: string;
-  cardName: string;
-  cardAtk: number;
-  cardHp: number;
-  cardEnergy: number;
+  cardImg?: string;
+  cardName?: string;
+  cardAtk?: number;
+  cardHp?: number;
+  cardEnergy?: number;
   stock: number;
   cost: number;
 }

@@ -4,10 +4,10 @@ import { FramedCardWithCount } from "../../molecules/FramedCardWithCount/FramedC
 
 export interface CardData extends CardType {
   count: number;
-  img: string;
-  energy: number;
-  atk: number;
-  hp: number;
+  img?: string;
+  energy?: number;
+  atk?: number;
+  hp?: number;
 }
 
 export function InventoryPage() {

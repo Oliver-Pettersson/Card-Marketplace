@@ -1,3 +1,5 @@
+import ApiService from "../../../services/ApiService";
+
 export interface PackProps {
   img: string;
   expansion: string;
@@ -13,11 +15,17 @@ export function Pack(props: PackProps) {
         <>
           <h5>{props.expansion}</h5>
           <h5>Costs: {props.cost} Coins</h5>
-          <button>Buy</button>
+          <button onClick={clickBuy}>Buy</button>
         </>
       </div>
     </div>
   );
+
+  function clickBuy() {
+    ApiService.get("/pack").then((res) => {
+      console.log(res);
+    });
+  }
 }
 
 const frame = {

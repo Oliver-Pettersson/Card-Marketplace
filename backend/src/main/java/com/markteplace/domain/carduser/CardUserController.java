@@ -20,7 +20,7 @@ public class CardUserController extends AbstractEntityController<CardUser, CardU
         super(service, mapper);
     }
 
-    @PostMapping("/pack")
+    @GetMapping("/pack")
     public ResponseEntity<Collection<CardUserDTO>> findAll() {
         Collection<CardUser> dms = ((CardUserService) service).boosterPack();
 

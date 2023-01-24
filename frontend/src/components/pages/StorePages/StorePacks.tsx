@@ -5,7 +5,7 @@ export function StorePacks() {
   const [packs, setPacks] = useState<PackProps[]>([]);
   useEffect(() => {
     genPacks();
-  });
+  }, []);
   return (
     <div>
       <div style={flex}>

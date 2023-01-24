@@ -11,6 +11,9 @@ import Navbar from "./components/atoms/Navbar/Navbar";
 import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
 import DeckPage from "./components/pages/DeckPage/DeckPage";
 import { DataContextProvider } from "./contexts/DataContext";
+import { TradePage } from "./components/pages/TradePage/TradePage";
+import { StorePacks } from "./components/pages/StorePages/StorePacks";
+import { StoreCards } from "./components/pages/StorePages/StoreCards";
 
 function App() {
   return (
@@ -30,6 +33,11 @@ function App() {
               </Route>
               <Route path="/inventory" element={<ProtectedRoute />}>
                 <Route path="/inventory" element={<InventoryPage />} />
+              </Route>
+              <Route path="/shop" element={<ProtectedRoute />}>
+                <Route path="/shop/packs" element={<StorePacks />} />
+                <Route path="/shop/trade" element={<TradePage />} />
+                <Route path="/shop/trade" element={<StoreCards />} />
               </Route>
             </Routes>
           </SnackbarContextProvider>
