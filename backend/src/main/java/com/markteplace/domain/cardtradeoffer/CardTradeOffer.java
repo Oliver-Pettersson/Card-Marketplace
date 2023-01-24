@@ -18,11 +18,11 @@ public class CardTradeOffer extends AbstractEntity {
 
     @ManyToOne
     @JoinColumn(name = "offer_card_user_id", nullable = false)
-    private Card offerCardUser;
+    private CardUser offerCardUser;
 
     @ManyToOne
     @JoinColumn(name = "accepter_card_user_id", nullable = false)
-    private Card accepterCardUser;
+    private CardUser accepterCardUser;
 
     @Column(name = "offer_timestamp", nullable = false)
     private LocalDateTime offerTimestamp;
@@ -31,7 +31,7 @@ public class CardTradeOffer extends AbstractEntity {
     @JoinColumn(name = "card_transaction_id")
     private CardTransaction cardTransaction;
 
-    public CardTradeOffer(User offerUser, Card offerCardUser, Card accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
+    public CardTradeOffer(User offerUser, CardUser offerCardUser, CardUser accepterCardUser, LocalDateTime offerTimestamp, CardTransaction cardTransaction) {
         this.offerUser = offerUser;
         this.offerCardUser = offerCardUser;
         this.accepterCardUser = accepterCardUser;
@@ -51,20 +51,20 @@ public class CardTradeOffer extends AbstractEntity {
         return this;
     }
 
-    public Card getOfferCardUser() {
+    public CardUser getOfferCardUser() {
         return offerCardUser;
     }
 
-    public CardTradeOffer setOfferCardUser(Card offerCardUser) {
+    public CardTradeOffer setOfferCardUser(CardUser offerCardUser) {
         this.offerCardUser = offerCardUser;
         return this;
     }
 
-    public Card getAccepterCardUser() {
+    public CardUser getAccepterCardUser() {
         return accepterCardUser;
     }
 
-    public CardTradeOffer setAccepterCardUser(Card accepterCardUser) {
+    public CardTradeOffer setAccepterCardUser(CardUser accepterCardUser) {
         this.accepterCardUser = accepterCardUser;
         return this;
     }

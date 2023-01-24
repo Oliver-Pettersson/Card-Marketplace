@@ -34,8 +34,8 @@ public class CardTradeOfferServiceImpl extends AbstractEntityServiceImpl<CardTra
 
     @Override
     public CardTradeOffer create(CardTradeOffer entity) {
-        if (cardService.findByValue(entity.getOfferCardUser()) == null ||
-                cardService.findByValue(entity.getAccepterCardUser()) == null)
+        if (cardService.findByValue(entity.getOfferCardUser().getCard()) == null ||
+                cardService.findByValue(entity.getAccepterCardUser().getCard()) == null)
             throw new InvalidStringException("User does not own card");
 
         entity.setCardTransaction(null);
