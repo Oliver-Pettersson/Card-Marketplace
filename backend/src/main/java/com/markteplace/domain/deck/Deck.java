@@ -18,9 +18,9 @@ public class Deck extends AbstractEntity {
             name = "card_deck",
             joinColumns = @JoinColumn(name = "deck_id"),
             inverseJoinColumns = @JoinColumn(name = "card_user_id"))
-    private List<Card> cardsInDeck;
+    private List<CardUser> cardsInDeck;
 
-    public Deck(String name, List<Card> cardsInDeck) {
+    public Deck(String name, List<CardUser> cardsInDeck) {
         this.name = name;
         this.cardsInDeck = cardsInDeck;
     }
@@ -37,11 +37,11 @@ public class Deck extends AbstractEntity {
         return this;
     }
 
-    public List<Card> getCardsInDeck() {
+    public List<CardUser> getCardsInDeck() {
         return cardsInDeck;
     }
 
-    public Deck setCardsInDeck(List<Card> cardsInDeck) {
+    public Deck setCardsInDeck(List<CardUser> cardsInDeck) {
         this.cardsInDeck = cardsInDeck;
         return this;
     }
