@@ -2,6 +2,7 @@ package com.markteplace.domain.card;
 
 import com.markteplace.core.generic.AbstractEntity;
 import com.markteplace.domain.cardstats.CardStats;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,6 +13,8 @@ public class Card extends AbstractEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Lob
+    @Type(type = "org.hibernate.type.TextType")
     @Column(name = "image", nullable = false)
     private String image;
 

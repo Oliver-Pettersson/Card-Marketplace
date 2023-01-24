@@ -8,6 +8,15 @@ import com.markteplace.domain.cardtransaction.dto.CardTransactionDTO;
 import com.markteplace.domain.carduser.dto.CardUserDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.markteplace.domain.carduser.dto.CardCollectionFromUserDTO;
+import com.markteplace.domain.carduser.dto.CardUserDTO;
+import com.markteplace.domain.user.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/card-user")
@@ -48,5 +57,19 @@ public class CardUserController extends AbstractEntityController<CardUser, CardU
     @DeleteMapping("/not-available")
     public ResponseEntity<Void> deleteById(@PathVariable String ignore) {
         return null;
+    }
+    @PostMapping("/pack")
+    public ResponseEntity<Collection<CardUserDTO>> findAll() {
+        Collection<CardUser> dms = ((CardUserService) service).boosterPack();
+
+        return new ResponseEntity<>(mapper.toDTOs(dms), HttpStatus.OK);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<Collection<CardCollectionFromUserDTO>> findById() {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Collection<CardCollectionFromUserDTO> dm = ((CardUserService) service).getCurrentUserCollection(user);
+
+        return new ResponseEntity<>(dm, HttpStatus.OK);
     }
 }
