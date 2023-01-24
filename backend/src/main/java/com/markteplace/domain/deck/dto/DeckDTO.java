@@ -11,6 +11,7 @@ public class DeckDTO extends AbstractEntityDTO {
     private List<CardUser> cards;
 
     public DeckDTO(String name, List<CardUser> cards) {
+
         this.name = name;
         this.cards = cards;
     }

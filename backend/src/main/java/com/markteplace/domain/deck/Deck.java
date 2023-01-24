@@ -42,7 +42,8 @@ public class Deck extends AbstractEntity {
         return cards;
     }
 
-    public void setCards(List<CardUser> cards) {
+    public Deck setCards(List<CardUser> cards) {
         this.cards = cards;
+        return this;
     }
 }
