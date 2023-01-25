@@ -1,7 +1,6 @@
 package com.markteplace.domain.deck.dto;
 
 import com.markteplace.core.generic.AbstractEntityDTO;
-import com.markteplace.domain.card.Card;
 import com.markteplace.domain.carduser.CardUser;
 
 import java.util.List;
@@ -9,14 +8,23 @@ import java.util.List;
 public class DeckDTO extends AbstractEntityDTO {
     private String name;
 
-    private List<CardUser> cardsInDeck;
+    private List<CardUser> cards;
 
-    public DeckDTO(String name, List<CardUser> cardsInDeck) {
+    public DeckDTO(String name, List<CardUser> cards) {
+
         this.name = name;
-        this.cardsInDeck = cardsInDeck;
+        this.cards = cards;
     }
 
     public DeckDTO() {
+    }
+
+    public List<CardUser> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<CardUser> cards) {
+        this.cards = cards;
     }
 
     public String getName() {
@@ -29,11 +37,11 @@ public class DeckDTO extends AbstractEntityDTO {
     }
 
     public List<CardUser> getCardsInDeck() {
-        return cardsInDeck;
+        return this.cards;
     }
 
-    public DeckDTO setCardsInDeck(List<CardUser> cardsInDeck) {
-        this.cardsInDeck = cardsInDeck;
+    public DeckDTO setCardsInDeck(List<CardUser> cards) {
+        this.cards = cards;
         return this;
     }
 }

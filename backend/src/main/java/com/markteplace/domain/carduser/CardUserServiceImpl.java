@@ -65,7 +65,7 @@ public class CardUserServiceImpl extends AbstractEntityServiceImpl<CardUser> imp
 
         Collection<CardCollectionFromUserDTO> cardCollection = new ArrayList<>();
         for (CardUser cardUser : cardUsersCopy) {
-            cardCollection.add(new CardCollectionFromUserDTO(cardUser.getCard().getImage(),
+            cardCollection.add(new CardCollectionFromUserDTO(cardUser.getId(), cardUser.getCard().getImage(),
                     cardUser.getCard().getName(), cardUser.getCard().getCardStats().getAttack(),
                     cardUser.getCard().getCardStats().getHealth(),
                     cardUser.getCard().getCardStats().getEnergy(),

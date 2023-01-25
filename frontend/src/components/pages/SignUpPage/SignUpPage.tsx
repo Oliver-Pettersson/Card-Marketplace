@@ -40,7 +40,7 @@ export default function SignUpPage() {
               console.log(value);
               AuthenticationService().signup(value).then(() => login(value.username, value.password)
               .then(() => navigate("/"))
-              ).catch((response) =>
+              ).catch(({response}) =>
               displaySnackbarMessage(response.data, "error")
             );
             }}

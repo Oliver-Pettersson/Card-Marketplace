@@ -37,7 +37,7 @@ public class UserDTO extends AbstractEntityDTO {
         List<Deck> deck = new ArrayList<>();
         for (DeckDTO deckDTO:decks) {
              deck.add((Deck) new Deck()
-                     .setName(deckDTO.getName()).setCardsInDeck(deckDTO.getCardsInDeck()).setId(deckDTO.getId()));
+                     .setName(deckDTO.getName()).setCards(deckDTO.getCardsInDeck()).setId(deckDTO.getId()));
         }
         return deck;
     }
@@ -46,7 +46,7 @@ public class UserDTO extends AbstractEntityDTO {
         List<DeckDTO> deckDTOS = new ArrayList<>();
         for (Deck deck:decks) {
             deckDTOS.add((DeckDTO) new DeckDTO()
-                    .setName(deck.getName()).setCardsInDeck(deck.getCardsInDeck()).setId(deck.getId()));
+                    .setName(deck.getName()).setCardsInDeck(deck.getCards()).setId(deck.getId()));
         }
         this.decks = deckDTOS;
         return this;

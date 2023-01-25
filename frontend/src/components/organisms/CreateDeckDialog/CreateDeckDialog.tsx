@@ -1,6 +1,8 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
 import { Form, Formik } from "formik";
 import React from "react";
+import { useData } from "../../../contexts/DataContext";
+import DeckService from "../../../services/DeckService";
 import MuiTextField from "../../atoms/MuiTextField/MuiTextField";
 import CardInputList from "../../molecules/CardInputList/CardInputList";
 
@@ -10,13 +12,22 @@ interface PropsType {
 }
 
 export default function CreateDeckDialog({ open, setOpen }: PropsType) {
+  const {refreshDecks} = useData()
   return (
     <Dialog open={open} fullWidth maxWidth="sm">
         <div style={{minWidth: "100%"}}>
       <Formik
         initialValues={{ name: "", cards: [] }}
-        onSubmit={(values) => {
+        onSubmit={async (values) => {
           console.log(values);
+          try {
+          await DeckService().create(values)
+          refreshDecks()
+          setOpen(false)}
+          catch (exception) {
+            console.log(exception);
+            
+          }
         }}
       >
         {({ handleChange, setFieldValue }) => (

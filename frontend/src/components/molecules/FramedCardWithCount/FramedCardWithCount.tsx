@@ -1,4 +1,4 @@
-import { PlayCard } from "../../atoms/Card/PlayCard";
+import { PlayCard } from "../../atoms/PlayCard/PlayCard";
 interface Props {
   img: string;
   name: string;
@@ -13,10 +13,10 @@ export function FramedCardWithCount(props: Props) {
     <div style={frame}>
       <div style={center}>
         <PlayCard
-          img={props.img}
+          image={props.img}
           name={props.name}
-          atk={props.atk}
-          hp={props.hp}
+          attack={props.atk}
+          health={props.hp}
           energy={props.energy}
         />
       </div>

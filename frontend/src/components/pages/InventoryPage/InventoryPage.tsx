@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { CardType } from "../../atoms/Card/PlayCard";
+import { CardType } from "../../atoms/PlayCard/PlayCard";
 import { FramedCardWithCount } from "../../molecules/FramedCardWithCount/FramedCardWithCount";
 
 export interface CardData extends CardType {
   count: number;
-  img: string;
+  image: string;
   energy: number;
-  atk: number;
-  hp: number;
+  attack: number;
+  health: number;
 }
 
 export function InventoryPage() {
@@ -21,11 +21,11 @@ export function InventoryPage() {
           return (
             <div>
               <FramedCardWithCount
-                img={card.img}
+                img={card.image}
                 name={card.name}
                 energy={card.energy}
-                atk={card.atk}
-                hp={card.hp}
+                atk={card.attack}
+                hp={card.health}
                 count={card.count}
               />
             </div>
@@ -39,11 +39,11 @@ export function InventoryPage() {
     //get cards
     for (let i = 0; i < 50; i++) {
       let card: CardType = {
-        img: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
+        image: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
         energy: 5,
-        atk: 5,
-        hp: 5,
+        attack: 5,
+        health: 5,
       };
       cardsArray.push(card);
     }
@@ -54,9 +54,9 @@ export function InventoryPage() {
         let cardObject: CardData = {
           count: cardMap.get(card.name)!.count + 1,
           name: card.name,
-          atk: card.atk,
-          hp: card.hp,
-          img: card.img,
+          attack: card.attack,
+          health: card.health,
+          image: card.image,
           energy: card.energy,
         };
         cardMap.set(card.name, cardObject);
@@ -64,9 +64,9 @@ export function InventoryPage() {
         let cardObject: CardData = {
           count: 1,
           name: card.name,
-          atk: card.atk,
-          hp: card.hp,
-          img: card.img,
+          attack: card.attack,
+          health: card.health,
+          image: card.image,
           energy: card.energy,
         };
         cardMap.set(card.name, cardObject);
