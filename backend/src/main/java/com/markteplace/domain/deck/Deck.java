@@ -3,6 +3,8 @@ package com.markteplace.domain.deck;
 import com.markteplace.core.generic.AbstractEntity;
 import com.markteplace.domain.card.Card;
 import com.markteplace.domain.carduser.CardUser;
+import com.markteplace.domain.user.User;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.persistence.*;
 import java.util.List;
@@ -20,9 +22,13 @@ public class Deck extends AbstractEntity {
             inverseJoinColumns = @JoinColumn(name = "card_user_id"))
     private List<CardUser> cards;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+
     public Deck(String name, List<CardUser> cards) {
         this.name = name;
         this.cards = cards;
+        this.user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
     public Deck() {
@@ -44,5 +50,13 @@ public class Deck extends AbstractEntity {
     public Deck setCards(List<CardUser> cards) {
         this.cards = cards;
         return this;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

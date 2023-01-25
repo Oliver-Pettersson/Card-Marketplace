@@ -18,7 +18,7 @@ public class DeckController extends AbstractEntityController<Deck, DeckDTO> {
     }
 
     @PostMapping("/")
-    public ResponseEntity<DeckDTO> create(CreateDeckDTO dto) {
+    public ResponseEntity<DeckDTO> create(@RequestBody CreateDeckDTO dto) {
         deckService.create(dto);
         return ResponseEntity.ok(null);
     }

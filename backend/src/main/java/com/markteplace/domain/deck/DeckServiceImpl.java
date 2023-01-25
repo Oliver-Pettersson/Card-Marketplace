@@ -23,6 +23,6 @@ public class DeckServiceImpl extends AbstractEntityServiceImpl<Deck> implements 
         return create(new Deck(entity.getName(), entity
                 .getCards()
                 .stream()
-                .map(id -> cardUserService.findById(id)).collect(Collectors.toList())));
+                .map(id -> cardUserService.findById(id)).toList()));
     }
 }
