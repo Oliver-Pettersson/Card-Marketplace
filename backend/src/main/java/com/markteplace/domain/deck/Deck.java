@@ -1,5 +1,6 @@
 package com.markteplace.domain.deck;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.markteplace.core.generic.AbstractEntity;
 import com.markteplace.domain.card.Card;
 import com.markteplace.domain.carduser.CardUser;
@@ -23,6 +24,7 @@ public class Deck extends AbstractEntity {
     private List<CardUser> cards;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private User user;
 
     public Deck(String name, List<CardUser> cards) {
