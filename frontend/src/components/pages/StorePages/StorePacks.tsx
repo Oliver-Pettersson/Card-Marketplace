@@ -1,46 +1,37 @@
-import { useEffect, useState } from "react";
-import { Pack, PackProps } from "../../molecules/Pack/Pack";
+import { useState } from "react";
+import { CardType, PlayCard } from "../../atoms/PlayCard/PlayCard";
 
-export function StorePacks() {
-  const [packs, setPacks] = useState<PackProps[]>([]);
-  useEffect(() => {
-    genPacks();
-  }, []);
+export function Store_Packs() {
+  const [cards, setCards] = useState<CardType[]>([]);
   return (
     <div>
-      <div style={flex}>
-        {packs.map((pack: PackProps) => {
-          return (
-            <div style={flex}>
-              <Pack
-                img={pack.img}
-                expansion={pack.expansion}
-                cost={pack.cost}
-              />
-            </div>
-          );
-        })}
-      </div>
+      <button onClick={genCardsTemp}>Load market</button>
+      {cards.map((card: CardType) => {
+        return (
+          <PlayCard
+            image={card.image}
+            name={card.name}
+            energy={card.energy}
+            attack={card.attack}
+            health={card.health}
+          />
+        );
+      })}
     </div>
   );
-
-  function genPacks() {
-    let packsArray: PackProps[] = [];
-    for (let i = 0; i < 1; i++) {
-      let pack: PackProps = {
-        img: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
-        expansion: "Base Set",
-        cost: 100,
+  function genCardsTemp() {
+    let cardsArray: CardType[] = [];
+    for (let i = 0; i < 50; i++) {
+      let card: CardType = {
+        image:
+          "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
+        name: "Name",
+        energy: 5,
+        attack: 5,
+        health: 5,
       };
-      packsArray.push(pack);
+      cardsArray.push(card);
     }
-    setPacks(packsArray);
+    setCards(cardsArray);
   }
 }
-
-const flex: React.CSSProperties = {
-  margin: "auto",
-  display: "grid",
-  gridTemplateColumns: "auto auto auto auto auto auto auto",
-  marginBottom: "3vh",
-};
