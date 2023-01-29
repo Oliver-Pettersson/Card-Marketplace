@@ -14,6 +14,7 @@ import { DataContextProvider } from "./contexts/DataContext";
 import { TradePage } from "./components/pages/TradePage/TradePage";
 import { StorePacks } from "./components/pages/StorePages/StorePacks";
 import { StoreCards } from "./components/pages/StorePages/StoreCards";
+import DeckDetailsPage from "./components/pages/DeckDetailsPage/DeckDetailsPage";
 
 function App() {
   return (
@@ -38,6 +39,15 @@ function App() {
                 <Route path="/shop/packs" element={<StorePacks />} />
                 <Route path="/shop/trade" element={<TradePage />} />
                 <Route path="/shop/trade" element={<StoreCards />} />
+              </Route>
+              <Route
+                path="/deckdetails/:deckIndex"
+                element={<ProtectedRoute />}
+              >
+                <Route
+                  path="/deckdetails/:deckIndex"
+                  element={<DeckDetailsPage />}
+                />
               </Route>
             </Routes>
           </SnackbarContextProvider>

@@ -1,9 +1,9 @@
+import CardStats from "../CardStats/CardStats";
+
 export default interface CardEntity {
   id: string;
   name: string;
   image: string;
-  creationTimestamp?: Date;
-  attack: number;
-  health: number;
-  energy: number;
+  creationTimestamp: Date;
+  cardStats: CardStats;
 }

@@ -14,9 +14,7 @@ export default function CardInputList({ setFormikFieldValue }: PropsType) {
   const defaultItem = {
     id: "",
     name: "",
-    attack: 0,
-    health: 0,
-    energy: 0,
+    cardStats: {id: "", attack: 0, health: 0, energy: 0 },
   };
   const [cardList, setCardList] = useState([defaultItem]);
   useEffect(() => {
@@ -36,11 +34,14 @@ export default function CardInputList({ setFormikFieldValue }: PropsType) {
             sx={{ width: "70%" }}
             value={row}
             onSelection={(value) => {
+              console.log(value);
+              
               const newArray = [...cardList];
               newArray[index] = value;
               setCardList(newArray);
               setOptions(
-                options.filter((loopValue) => loopValue.id !== value.id)
+                options.filter((loopValue) => {console.log(loopValue);
+                 return loopValue.id !== value.id})
               );
             }}
           />
@@ -51,10 +52,10 @@ export default function CardInputList({ setFormikFieldValue }: PropsType) {
                 if (cardList[index]) {
                   cards.some((value) => {
                     if (value.id === cardList[index].id) {
-                      options.push(value)
-                      return true
+                      options.push(value);
+                      return true;
                     }
-                    return false
+                    return false;
                   });
                 }
                 const newArray = [...cardList];
@@ -72,7 +73,7 @@ export default function CardInputList({ setFormikFieldValue }: PropsType) {
         fullWidth
         onClick={() => setCardList([...cardList, defaultItem])}
       >
-        + Add Ingredient
+        + Add Card
       </Button>
     </div>
   );

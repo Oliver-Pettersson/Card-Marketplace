@@ -25,8 +25,8 @@ public class CardUserServiceImpl extends AbstractEntityServiceImpl<CardUser> imp
     private static final Random random = new Random();
 
 
-    public CardUserServiceImpl(AbstractEntityRepository<CardUser> repository, Logger logger,
-                               @Lazy CardService cardService, UserService userService) {
+
+    public CardUserServiceImpl(AbstractEntityRepository<CardUser> repository, Logger logger, @Lazy CardService cardService, UserService userService) {
         super(repository, logger);
         this.cardService = cardService;
         this.userService = userService;
@@ -65,7 +65,7 @@ public class CardUserServiceImpl extends AbstractEntityServiceImpl<CardUser> imp
 
         Collection<CardCollectionFromUserDTO> cardCollection = new ArrayList<>();
         for (CardUser cardUser : cardUsersCopy) {
-            cardCollection.add(new CardCollectionFromUserDTO(cardUser.getCard().getImage(),
+            cardCollection.add(new CardCollectionFromUserDTO(cardUser.getId(), cardUser.getCard().getImage(),
                     cardUser.getCard().getName(), cardUser.getCard().getCardStats().getAttack(),
                     cardUser.getCard().getCardStats().getHealth(),
                     cardUser.getCard().getCardStats().getEnergy(),

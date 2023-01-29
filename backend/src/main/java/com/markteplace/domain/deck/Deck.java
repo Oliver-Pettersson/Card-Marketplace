@@ -1,8 +1,11 @@
 package com.markteplace.domain.deck;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.markteplace.core.generic.AbstractEntity;
 import com.markteplace.domain.card.Card;
 import com.markteplace.domain.carduser.CardUser;
+import com.markteplace.domain.user.User;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,11 +21,16 @@ public class Deck extends AbstractEntity {
             name = "card_deck",
             joinColumns = @JoinColumn(name = "deck_id"),
             inverseJoinColumns = @JoinColumn(name = "card_user_id"))
-    private List<Card> cardsInDeck;
+    private List<CardUser> cards;
 
-    public Deck(String name, List<Card> cardsInDeck) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    private User user;
+
+    public Deck(String name, List<CardUser> cards) {
         this.name = name;
-        this.cardsInDeck = cardsInDeck;
+        this.cards = cards;
+        this.user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
     public Deck() {
@@ -37,12 +45,20 @@ public class Deck extends AbstractEntity {
         return this;
     }
 
-    public List<Card> getCardsInDeck() {
-        return cardsInDeck;
+    public List<CardUser> getCards() {
+        return cards;
     }
 
-    public Deck setCardsInDeck(List<Card> cardsInDeck) {
-        this.cardsInDeck = cardsInDeck;
+    public Deck setCards(List<CardUser> cards) {
+        this.cards = cards;
         return this;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

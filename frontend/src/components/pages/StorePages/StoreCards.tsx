@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CardType } from "../../atoms/Card/PlayCard";
+import { CardType } from "../../atoms/PlayCard/PlayCard";
 import { BuyableCard } from "../../molecules/BuyableCard/BuyableCard";
 
 export function StoreCards() {
@@ -14,11 +14,11 @@ export function StoreCards() {
               <BuyableCard
                 stock={5}
                 cost={5}
-                cardImg={card.img}
+                cardImg={card.image}
                 cardName={card.name}
                 cardEnergy={card.energy}
-                cardAtk={card.atk}
-                cardHp={card.hp}
+                cardAtk={card.attack}
+                cardHp={card.health}
               />
             </div>
           );
@@ -30,11 +30,11 @@ export function StoreCards() {
     let cardsArray: CardType[] = [];
     for (let i = 0; i < 50; i++) {
       let card: CardType = {
-        img: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
+        image: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
         energy: 5,
-        atk: 5,
-        hp: 5,
+        attack: 5,
+        health: 5,
       };
       cardsArray.push(card);
     }
