@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ApiService from "../../../services/ApiService";
 import { CardType } from "../../atoms/PlayCard/PlayCard";
 import { FramedCardWithCount } from "../../molecules/FramedCardWithCount/FramedCardWithCount";
 
@@ -14,8 +15,7 @@ export function InventoryPage() {
   const [cards, setCards] = useState<CardData[]>([]);
   return (
     <div>
-      <p>[Cash:5000]</p>
-      <button onClick={genCardsTemp}>Load market</button>
+      <button onClick={getCards}>Load market</button>
       <div style={flex}>
         {cards.map((card: CardData) => {
           return (
@@ -34,12 +34,17 @@ export function InventoryPage() {
       </div>
     </div>
   );
-  function genCardsTemp() {
+  function getCards(): void {
     let cardsArray: CardType[] = [];
     //get cards
+
+    ApiService.get("card-user").then((res) => {
+      console.log(res);
+    });
     for (let i = 0; i < 50; i++) {
       let card: CardType = {
-        image: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
+        image:
+          "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
         energy: 5,
         attack: 5,
