@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import CardSearchBar from "../../atoms/CardSearchBar/CardSearchBar";
 import CardSearchDTO from "../../../models/Card/CardSearchDTO";
-import { Store_Cards } from "../StorePages/StoreCards";
 import { TradeableCard } from "../../molecules/TradeableCard/TradeableCard";
-import { PlayCard } from "../../atoms/Card/PlayCard";
+import { PlayCard } from "../../atoms/PlayCard/PlayCard";
 import CardEntity from "../../../models/Card/CardEntity";
 export interface PackProps {
   img: string;

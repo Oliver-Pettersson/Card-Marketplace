@@ -12,6 +12,6 @@ export function StorePacks() {
   );
 
   function buyPack() {
-    ApiService.post("card-user/pack");
+    ApiService.post("card-user/pack", {});
   }
 }

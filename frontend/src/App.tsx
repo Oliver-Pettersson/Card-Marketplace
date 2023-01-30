@@ -12,8 +12,8 @@ import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
 import DeckPage from "./components/pages/DeckPage/DeckPage";
 import { DataContextProvider } from "./contexts/DataContext";
 import { TradePage } from "./components/pages/TradePage/TradePage";
-import { StorePacks } from "./components/pages/StorePages/StorePacks";
-import { StoreCards } from "./components/pages/StorePages/StoreCards";
+import { StorePacks } from "./components/pages/MarketPage/StorePacks";
+import { StoreCards } from "./components/pages/MarketPage/StoreCards";
 import DeckDetailsPage from "./components/pages/DeckDetailsPage/DeckDetailsPage";
 
 function App() {
