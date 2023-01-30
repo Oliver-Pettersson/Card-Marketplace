@@ -1,18 +1,17 @@
-import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from "./components/pages/LoginPage/LoginPage";
+import Navbar from "./components/atoms/Navbar/Navbar";
+import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
+import DeckDetailsPage from "./components/pages/DeckDetailsPage/DeckDetailsPage";
+import DeckPage from "./components/pages/DeckPage/DeckPage";
 import HomePage from "./components/pages/HomePage/HomePage";
+import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
+import LoginPage from "./components/pages/LoginPage/LoginPage";
+import MarketPage from "./components/pages/MarketPage/MarketPage";
 import SignUpPage from "./components/pages/SignUpPage/SignUpPage";
 import { AuthenticationContextProvider } from "./contexts/AuthenticationContext";
-import { SnackbarContextProvider } from "./contexts/SnackbarContext";
-import ProtectedRoute from "./components/atoms/ProtectedRoute/ProtectedRoute";
-import Navbar from "./components/atoms/Navbar/Navbar";
-import DeckPage from "./components/pages/DeckPage/DeckPage";
 import { DataContextProvider } from "./contexts/DataContext";
-import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
-import DeckDetailsPage from "./components/pages/DeckDetailsPage/DeckDetailsPage";
-import MarketPage from "./components/pages/MarketPage/MarketPage";
+import { SnackbarContextProvider } from "./contexts/SnackbarContext";
 
 function App() {
   return (

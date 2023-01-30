@@ -7,7 +7,7 @@ import CardListDialog from "../CardListDialog/CardListDialog";
 export default function PackSection() {
   const [receivedCards, setReceivedCards] = useState([]);
   const [dialogIsOpen, setDialogIsOpen] = useState(false);
-  const {refreshUser} = useData()
+  const {refreshUser, refreshCards} = useData()
   const buyPack = () => {
     CardService()
       .getPack()
@@ -16,11 +16,12 @@ export default function PackSection() {
         setReceivedCards(data.map(({card} : any) => card));
         setDialogIsOpen(true);
         refreshUser();
+        refreshCards();
       });
   };
   return (
     <div>
-      <Pack buyPack={buyPack} img={""} expansion={"Expansion V1"} cost={100} />
+      <Pack buyPack={buyPack} img={"images/9.jpg"} expansion={"Expansion V1"} cost={100} />
       <CardListDialog
         open={dialogIsOpen}
         setOpen={setDialogIsOpen}

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import CardEntity from "../models/Card/CardEntity";
+import CardDTO from "../models/Card/CardDTO";
 import Deck from "../models/Deck/Deck";
 import User from "../models/User/User";
 import CardService from "../services/CardService";
@@ -12,7 +12,7 @@ type DataProviderProps = {
 
 export type DataContextProps = {
   refreshCards: () => void;
-  cards: CardEntity[];
+  cards: CardDTO[];
   refreshDecks: () => void;
   decks: Deck[]
   refreshUser: () => void;
@@ -24,7 +24,7 @@ const DataContext = createContext<DataContextProps>({} as DataContextProps);
 export const useData = () => useContext(DataContext);
 
 export const DataContextProvider = ({ children }: DataProviderProps) => {
-  const [cards, setCards] = useState<CardEntity[]>([]);
+  const [cards, setCards] = useState<CardDTO[]>([]);
   const [decks, setDecks] = useState<Deck[]>([]);
   const [user, setUser] = useState<User>({coins: 0, username: ""})
   const { principal } = useAuth();

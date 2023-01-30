@@ -25,9 +25,9 @@ public class CardUserController extends AbstractEntityController<CardUser, CardU
         super(service, mapper);
     }
 
-
     /**
-     * Since it should not be possible to create new card users this method is "disabled"
+     * Since it should not be possible to create new card users this method is
+     * "disabled"
      *
      * @return always null
      */
@@ -38,18 +38,21 @@ public class CardUserController extends AbstractEntityController<CardUser, CardU
     }
 
     /**
-     * Since it should not be possible to update card users this method is "disabled"
+     * Since it should not be possible to update card users this method is
+     * "disabled"
      *
      * @return always null
      */
     @Override
     @PutMapping("/not-available")
-    public ResponseEntity<CardUserDTO> updateById(@PathVariable String ignore, @RequestBody CardUserDTO dto) throws UsernameAlreadyExistsException {
+    public ResponseEntity<CardUserDTO> updateById(@PathVariable String ignore, @RequestBody CardUserDTO dto)
+            throws UsernameAlreadyExistsException {
         return null;
     }
 
     /**
-     * Since it should not be possible to delete card users this method is "disabled"
+     * Since it should not be possible to delete card users this method is
+     * "disabled"
      *
      * @return always null
      */
