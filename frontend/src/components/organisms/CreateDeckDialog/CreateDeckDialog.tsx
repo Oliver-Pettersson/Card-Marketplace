@@ -23,10 +23,9 @@ export default function CreateDeckDialog({ open, setOpen }: PropsType) {
           try {
           await DeckService().create(values)
           refreshDecks()
-          setOpen(false)}
-          catch (exception) {
+          setOpen(false)
+          } catch (exception) {
             console.log(exception);
-            
           }
         }}
       >
