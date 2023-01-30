@@ -30,7 +30,8 @@ export function StoreCards() {
     let cardsArray: CardType[] = [];
     for (let i = 0; i < 50; i++) {
       let card: CardType = {
-        image: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
+        image:
+          "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
         energy: 5,
         attack: 5,
