@@ -1,40 +1,24 @@
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+
 interface Props {
   img: string;
   expansion: string;
   cost: number;
+  buyPack: () => void;
 }
-export function Pack(props: Props) {
+export function Pack({cost, expansion, img, buyPack}: Props) {
   return (
-    <div style={frame}>
-      <div style={center}>
-        <img style={img} src={props.img} />
-      </div>
-      <div>
-        <>
-          <h5>{props.expansion}</h5>
-          <h5>Costs: {props.cost} Coins</h5>
-          <button>Buy</button>
-        </>
-      </div>
-    </div>
+    <Card elevation={9} sx={{ maxWidth: 175, minHeight: 250, margin: "15px" }}>
+      <CardMedia image={img} sx={{ height: "10em" }} />
+      <CardContent sx={{ textAlign: "center" }}>
+        <Typography variant="h5">{expansion}</Typography>
+        <div style={{ textAlign: "justify", margin: "auto", width: "fit-content"}}>
+        <Typography variant="body2">{cost} coins</Typography>
+        </div>
+      </CardContent>
+      <CardActions sx={{justifyContent: "center"}}>
+        <Button onClick={buyPack}>Buy</Button>
+      </CardActions>
+    </Card>
   );
 }
-
-const frame = {
-  width: "170px",
-  "border-style": "solid",
-  "border-width": "thick",
-};
-
-const center = {
-  display: "flex",
-  "justify-content": "center",
-  "border-style": "solid",
-  "border-width": "thick",
-  margin: "10px",
-};
-
-const img = {
-  height: "250px",
-  width: "140px",
-};

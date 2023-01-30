@@ -60,7 +60,7 @@ insert into card (id, creation_timestamp, image, name, card_stats_id)
 values ('9c8c9bee-1a17-404a-8cfe-875ea6f06943', '1999-01-08 04:05:06', 'BIIILD', 'Aboru',
         '0df9bfbf-6eb7-4f5e-8d8e-3650cfc21de9');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('1d972434-81da-4ad5-9e41-07298adb11b2', '1999-01-08 04:05:06', 'BIIILD', 'Negir',
+values ('1d972434-81da-4ad5-9e41-07298adb11b2', '1999-01-08 04:05:06', 'BIIILD', 'Degir',
         'aaf3c407-494f-4814-8efe-f6cf7c300772');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
 values ('c85f77d1-5723-42d2-b5be-dccfe074b522', '1999-01-08 04:05:06', 'BIIILD', 'Colondu',

@@ -58,8 +58,8 @@ public class CardUserController extends AbstractEntityController<CardUser, CardU
     public ResponseEntity<Void> deleteById(@PathVariable String ignore) {
         return null;
     }
-    @PostMapping("/pack")
-    public ResponseEntity<Collection<CardUserDTO>> findAll() {
+    @GetMapping("/pack")
+    public ResponseEntity<Collection<CardUserDTO>> findAll() throws UsernameAlreadyExistsException {
         Collection<CardUser> dms = ((CardUserService) service).boosterPack();
 
         return new ResponseEntity<>(mapper.toDTOs(dms), HttpStatus.OK);

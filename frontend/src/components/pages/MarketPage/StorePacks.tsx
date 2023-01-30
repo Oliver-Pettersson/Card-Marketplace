@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CardType, PlayCard } from "../../atoms/PlayCard/PlayCard";
 
-export function Store_Packs() {
+export function StorePacks() {
   const [cards, setCards] = useState<CardType[]>([]);
   return (
     <div>

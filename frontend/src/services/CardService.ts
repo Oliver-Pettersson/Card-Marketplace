@@ -7,6 +7,10 @@ const CardService = () => ({
       const {data} = await ApiService.get(baseURL);
       return data;
   },
+  getPack:async () => {
+    const {data} = await ApiService.get(baseURL + "pack")
+    return data
+  }
 })
 
 export default CardService

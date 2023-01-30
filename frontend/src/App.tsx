@@ -12,6 +12,7 @@ import DeckPage from "./components/pages/DeckPage/DeckPage";
 import { DataContextProvider } from "./contexts/DataContext";
 import { InventoryPage } from "./components/pages/InventoryPage/InventoryPage";
 import DeckDetailsPage from "./components/pages/DeckDetailsPage/DeckDetailsPage";
+import MarketPage from "./components/pages/MarketPage/MarketPage";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/inventory" element={<ProtectedRoute />}>
               <Route path="/inventory" element={<InventoryPage />} />
+            </Route>
+            <Route path="/market" element={<ProtectedRoute />}>
+              <Route path="/market" element={<MarketPage />} />
             </Route>
             <Route path="/deckdetails/:deckIndex" element={<ProtectedRoute />}>
               <Route path="/deckdetails/:deckIndex" element={<DeckDetailsPage />} />

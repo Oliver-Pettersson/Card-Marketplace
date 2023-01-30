@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import CardEntity from "../models/Card/CardEntity";
 import Deck from "../models/Deck/Deck";
+import User from "../models/User/User";
 import CardService from "../services/CardService";
 import UserService from "../services/UserService";
 import { useAuth } from "./AuthenticationContext";
@@ -14,6 +15,8 @@ export type DataContextProps = {
   cards: CardEntity[];
   refreshDecks: () => void;
   decks: Deck[]
+  refreshUser: () => void;
+  user: User
 };
 
 const DataContext = createContext<DataContextProps>({} as DataContextProps);
@@ -22,13 +25,19 @@ export const useData = () => useContext(DataContext);
 
 export const DataContextProvider = ({ children }: DataProviderProps) => {
   const [cards, setCards] = useState<CardEntity[]>([]);
-  const [decks, setDecks] = useState<Deck[]>([])
+  const [decks, setDecks] = useState<Deck[]>([]);
+  const [user, setUser] = useState<User>({coins: 0, username: ""})
   const { principal } = useAuth();
 
   const loadDecks = async () => {
     const {decks} = (await UserService().getSelf())
     console.log(decks);
     setDecks(decks)
+  }
+
+  const loadUser =async () => {
+    const data = (await UserService().getSelf())
+    setUser(data);
   }
 
   const loadCards = async () => {
@@ -42,6 +51,7 @@ export const DataContextProvider = ({ children }: DataProviderProps) => {
     if (principal) {
       loadCards();
       loadDecks();
+      loadUser();
     }
   }, [principal]);
 
@@ -50,8 +60,10 @@ export const DataContextProvider = ({ children }: DataProviderProps) => {
       value={{
         decks: decks,
         cards: cards,
+        user: user,
         refreshCards: loadCards,
-        refreshDecks: loadDecks
+        refreshDecks: loadDecks,
+        refreshUser: loadUser
       }}
     >
       {children}
