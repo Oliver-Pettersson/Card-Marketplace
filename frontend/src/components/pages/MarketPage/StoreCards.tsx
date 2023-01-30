@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CardType } from "../../atoms/PlayCard/PlayCard";
 import { BuyableCard } from "../../molecules/BuyableCard/BuyableCard";
 
-export function Store_Cards() {
+export function StoreCards() {
   const [cards, setCards] = useState<CardType[]>([]);
   return (
     <div>
@@ -30,7 +30,8 @@ export function Store_Cards() {
     let cardsArray: CardType[] = [];
     for (let i = 0; i < 50; i++) {
       let card: CardType = {
-        image: "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
+        image:
+          "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
         name: "Name",
         energy: 5,
         attack: 5,

@@ -1,10 +1,10 @@
 import { PlayCard } from "../../atoms/PlayCard/PlayCard";
 interface Props {
-  img: string;
-  name: string;
-  atk: number;
-  hp: number;
-  energy: number;
+  img?: string;
+  name?: string;
+  atk?: number;
+  hp?: number;
+  energy?: number;
   count: number;
 }
 

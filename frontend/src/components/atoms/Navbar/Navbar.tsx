@@ -1,17 +1,24 @@
 import { LogoutOutlined } from "@mui/icons-material";
 import {
-    AppBar,
-    Box,
-    Button,
-    Container, Toolbar,
-    Typography
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Toolbar,
+  Typography,
 } from "@mui/material";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthenticationContext";
 
 export default function Navbar() {
-  const pages = [{ name: "Home", path: "/" }, { name: "Decks", path: "/decks" }, { name: "Inventory", path: "/inventory" }];
+  const pages = [
+    { name: "Home", path: "/" },
+    { name: "Packs", path: "/shop/packs" },
+    { name: "Cards", path: "/shop/cards" },
+    { name: "Decks", path: "/decks" },
+    { name: "Inventory", path: "/inventory" },
+  ];
   const { isProcessingAuthentication, logout } = useAuth();
   const navigate = useNavigate();
   const path = useLocation().pathname;
@@ -71,7 +78,7 @@ export default function Navbar() {
                 right: 0,
                 top: 0,
                 bottom: 0,
-                position: "absolute"
+                position: "absolute",
               }}
             >
               Logout
