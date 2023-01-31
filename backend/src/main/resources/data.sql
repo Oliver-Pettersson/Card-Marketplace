@@ -51,31 +51,31 @@ insert into card_stats (id, attack, energy, health)
 values ('2fcb6d22-7af3-412d-90c8-468940904114', 6, 9, 1);
 
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('20539d71-fdc4-45c2-96b5-39fe5edd8f3b', '1999-01-08 04:05:06', 'BIIILD', 'Coradin',
+values ('20539d71-fdc4-45c2-96b5-39fe5edd8f3b', '1999-01-08 04:05:06', '1.jpg', 'Coradin',
         'd4dfed44-7728-41ff-817f-708c4c33c45e');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('73ccd50a-e120-478f-80d1-3afc428f01aa', '1999-01-08 04:05:06', 'BIIILD', 'Ceylun',
+values ('73ccd50a-e120-478f-80d1-3afc428f01aa', '1999-01-08 04:05:06', '2.jpg', 'Ceylun',
         '844bcf33-0543-4505-b061-dac053f5e4fc');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('9c8c9bee-1a17-404a-8cfe-875ea6f06943', '1999-01-08 04:05:06', 'BIIILD', 'Aboru',
+values ('9c8c9bee-1a17-404a-8cfe-875ea6f06943', '1999-01-08 04:05:06', '3.jpg', 'Aboru',
         '0df9bfbf-6eb7-4f5e-8d8e-3650cfc21de9');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('1d972434-81da-4ad5-9e41-07298adb11b2', '1999-01-08 04:05:06', 'BIIILD', 'Negir',
+values ('1d972434-81da-4ad5-9e41-07298adb11b2', '1999-01-08 04:05:06', '4.jpg', 'Degir',
         'aaf3c407-494f-4814-8efe-f6cf7c300772');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('c85f77d1-5723-42d2-b5be-dccfe074b522', '1999-01-08 04:05:06', 'BIIILD', 'Colondu',
+values ('c85f77d1-5723-42d2-b5be-dccfe074b522', '1999-01-08 04:05:06', '5.jpg', 'Colondu',
         '2b3a67eb-e7c0-4fc9-8d83-8553d7dfc6a9');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('12059108-a598-488e-842b-4a58301a315b', '1999-01-08 04:05:06', 'BIIILD', 'Haremi',
+values ('12059108-a598-488e-842b-4a58301a315b', '1999-01-08 04:05:06', '6.jpg', 'Haremi',
         'ba0c352f-f607-4812-937c-c082f73cd41f');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('3e860d48-1609-4942-822a-5b13d671aba1', '1999-01-08 04:05:06', 'BIIILD', 'Lopelus',
+values ('3e860d48-1609-4942-822a-5b13d671aba1', '1999-01-08 04:05:06', '7.jpg', 'Lopelus',
         'f39b7983-91e2-4b44-a9b9-4fba3d3ef891');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('1cb3e569-9107-42ee-9188-7acca447eed7', '1999-01-08 04:05:06', 'BIIILD', 'Popelia',
+values ('1cb3e569-9107-42ee-9188-7acca447eed7', '1999-01-08 04:05:06', '8.jpg', 'Popelia',
         '2a7ad4cd-4cca-4cec-b64e-3faadad79a6e');
 insert into card (id, creation_timestamp, image, name, card_stats_id)
-values ('10b45186-ba88-47bd-8e80-d522181cfe18', '1999-01-08 04:05:06', 'BIIILD', 'Manole',
+values ('10b45186-ba88-47bd-8e80-d522181cfe18', '1999-01-08 04:05:06', '9.jpg', 'Manole',
         '2fcb6d22-7af3-412d-90c8-468940904114');
 
 insert into deck (id, name, user_id)

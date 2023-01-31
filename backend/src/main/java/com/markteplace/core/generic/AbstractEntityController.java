@@ -23,7 +23,7 @@ public abstract class AbstractEntityController<DM extends AbstractEntity, DTO ex
      * @return the list of entries of the entity
      */
     @GetMapping
-    public ResponseEntity<Collection<DTO>> findAll() {
+    public ResponseEntity<Collection<DTO>> findAll() throws UsernameAlreadyExistsException {
         Collection<DM> dms = service.findAll();
 
         return new ResponseEntity<>(mapper.toDTOs(dms), HttpStatus.OK);

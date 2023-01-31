@@ -1,6 +1,7 @@
 package com.markteplace.domain.carduser;
 
 import com.markteplace.core.error.InvalidStringException;
+import com.markteplace.core.error.UsernameAlreadyExistsException;
 import com.markteplace.core.generic.AbstractEntityRepository;
 import com.markteplace.core.generic.AbstractEntityServiceImpl;
 import com.markteplace.domain.card.Card;
@@ -33,11 +34,12 @@ public class CardUserServiceImpl extends AbstractEntityServiceImpl<CardUser> imp
     }
 
     @Override
-    public Collection<CardUser> boosterPack() {
+    public Collection<CardUser> boosterPack() throws UsernameAlreadyExistsException {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (user.getCoins() < BOOSTER_PACK_PRICE) throw new InvalidStringException("User does not have enough money");
 
         user.setCoins(user.getCoins() - BOOSTER_PACK_PRICE);
+        userService.updateById(user.getId().toString(), user);
         List<Card> cards = cardService.findAll();
         List<CardUser> newCards = new ArrayList<>();
         for (int i = 0; i < CARDS_IN_BOOSTER_PACK; i++) {
