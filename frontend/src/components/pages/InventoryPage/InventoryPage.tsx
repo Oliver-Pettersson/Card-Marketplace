@@ -15,7 +15,7 @@ export function InventoryPage() {
   const [cards, setCards] = useState<CardData[]>([]);
   return (
     <div>
-      <button onClick={getCards}>Load market</button>
+      <button onClick={getCards}>Show my cards</button>
       <div style={flex}>
         {cards.map((card: CardData) => {
           return (
@@ -34,51 +34,42 @@ export function InventoryPage() {
       </div>
     </div>
   );
-  function getCards(): void {
-    let cardsArray: CardType[] = [];
-    //get cards
-
-    ApiService.get("card-user").then((res) => {
-      console.log(res);
-    });
-    for (let i = 0; i < 50; i++) {
-      let card: CardType = {
-        image:
-          "https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg",
-        name: "Name",
-        energy: 5,
-        attack: 5,
-        health: 5,
-      };
-      cardsArray.push(card);
-    }
-    //filter cards
+  function getCards() {
     let cardMap = new Map<String, CardData>();
-    cardsArray.forEach((card) => {
-      if (cardMap.has(card.name)) {
-        let cardObject: CardData = {
-          count: cardMap.get(card.name)!.count + 1,
-          name: card.name,
-          attack: card.attack,
-          health: card.health,
-          image: card.image,
-          energy: card.energy,
-        };
-        cardMap.set(card.name, cardObject);
-      } else {
-        let cardObject: CardData = {
-          count: 1,
-          name: card.name,
-          attack: card.attack,
-          health: card.health,
-          image: card.image,
-          energy: card.energy,
-        };
-        cardMap.set(card.name, cardObject);
-      }
+
+    ApiService.get("card-user/").then((res) => {
+      console.log(res);
+      res.data.forEach((card: CardData) => {
+        if (cardMap.has(card.name)) {
+          console.log("set as new");
+          let cardObject: CardData = {
+            count: cardMap.get(card.name)!.count + 1,
+            name: card.name,
+            attack: card.attack,
+            health: card.health,
+            image:
+              "https://i.pinimg.com/736x/3c/b2/ea/3cb2ea34484f58497417471eee262c0e--dragon-artwork-blue-eyes-white-dragon.jpg",
+            energy: card.energy,
+          };
+          cardMap.set(card.name, cardObject);
+        } else {
+          console.log("add");
+          let cardObject: CardData = {
+            count: 1,
+            name: card.name,
+            attack: card.attack,
+            health: card.health,
+            image:
+              "https://i.pinimg.com/736x/3c/b2/ea/3cb2ea34484f58497417471eee262c0e--dragon-artwork-blue-eyes-white-dragon.jpg",
+            energy: card.energy,
+          };
+          cardMap.set(card.name, cardObject);
+        }
+      });
+      const filteredData: CardData[] = [...cardMap.values()];
+      console.log(filteredData);
+      setCards(filteredData);
     });
-    const filteredData: CardData[] = [...cardMap.values()];
-    setCards(filteredData);
   }
 }
 

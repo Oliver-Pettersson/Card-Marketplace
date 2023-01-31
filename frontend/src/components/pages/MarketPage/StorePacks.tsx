@@ -6,12 +6,21 @@ export function StorePacks() {
   const [cards, setCards] = useState<CardType[]>([]);
   return (
     <div>
-      <img src="https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg" />
+      <img
+        style={img}
+        src="https://staticg.sportskeeda.com/editor/2022/01/362a0-16430841451113-1920.jpg"
+      />
       <button onClick={buyPack}>Buy Pack</button>
     </div>
   );
 
   function buyPack() {
-    ApiService.post("card-user/pack", {});
+    ApiService.get("card-user/pack").then((res) => {
+      console.log(res);
+    });
   }
 }
+
+const img: React.CSSProperties = {
+  maxWidth: "20%",
+};
