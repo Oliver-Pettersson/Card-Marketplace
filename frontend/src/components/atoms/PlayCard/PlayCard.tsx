@@ -11,7 +11,7 @@ export interface CardType {
 export function PlayCard({name, image, attack, energy, health}: CardType) {
   return (
     <Card elevation={9} sx={{ minWidth: 175, minHeight: 250, margin: "15px" }}>
-      <CardMedia image={"images/" + image} sx={{ height: "10em" }} />
+      <CardMedia image={image} sx={{ height: "10em" }} />
       <CardContent sx={{ textAlign: "center" }}>
         <Typography variant="h5">{name}</Typography>
         <div style={{ textAlign: "justify", margin: "auto", width: "fit-content"}}>

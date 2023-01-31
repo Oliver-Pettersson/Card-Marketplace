@@ -29,7 +29,7 @@ export default function CardListDialog({
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           {cards.map((card) => (
             <PlayCard
-              image={card.image}
+              image={"images/" + card.image}
               name={card.name}
               energy={card.cardStats.energy}
               attack={card.cardStats.attack}

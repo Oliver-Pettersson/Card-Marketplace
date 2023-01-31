@@ -45,7 +45,7 @@ export function InventoryPage() {
           return (
             <div>
               <FramedCardWithCount
-                img={card.image}
+                img={"images/" + card.image}
                 name={card.name}
                 energy={card.energy}
                 atk={card.attack}
